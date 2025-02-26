@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+        <h1 class="logo">ُEgyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br><br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+            <a href="./../Pages/about.html"><ion-icon name="people-circle-outline"></ion-icon>من نحن</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off"><ion-icon name="close-outline"></ion-icon>close</a>
+        </div>
+    </div>
+    
+        <div class="main">
+        <div class="main-navbar">
+            <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline"></ion-icon></div></div>
+            <div class="img"><img src="../../Static/images/اساسيات/logo.png"></div>
+            <div class="profile"><a class="user" href="./../../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+        </div>
+        <!------------------------------------------------------------>
+        <br><br>
+        <h1 class="title-ordero"> أدخل رأيك </h1>
+
+        <form id="submit-to-google-sheet">
+            
+            <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="ادخل اسمك"
+                required
+            />
+            </div>
+
+            <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="feedback"
+                id="feedback"
+                placeholder="ادخل رأيك في الخدمة"
+                required
+            />
+            </div>
+
+            <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                name="number"
+                id="number"
+                placeholder="ادخل رقم هاتفك"
+                required
+            />
+            </div>
+
+            <div class="form-group">
+            <select class="form-control" name="condition" id="condition" required>
+                <option value="سعيد بالخدمة">سعيد بالخدمة</option>
+                <option value="راضي عن الخدمة">راضي عن الخدمة</option>
+                <option value="خدمة مقبولة">خدمة مقبولة</option>
+                <option value="خدمة غير جيدة">خدمة غير جيدة</option>
+                <option value="خدمة سيئة">خدمة سيئة</option>
+            </select>
+            </div>
+            <br>
+
+            <button type="submit" class="WhatsApp"> <h2>أرسال</h2> </button>
+        </form>
+        
+        <!------------------------------------------------------------>
+    </div>
+    
+    <script>
+        const scriptURL =                       
+        "https://script.google.com/macros/s/AKfycbyIkzNLs0_tVkmbDjb81I6knaIyCa_ZMUgt8kuB3XU3yzGvapA1NRyGLaUO3nLyE6c/exec";
+        const form = document.forms["submit-to-google-sheet"];
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          var formData = new FormData(form);
+  
+          fetch(scriptURL, { method: "POST", body: formData })
+            .then((response) => {
+              swal("Done", "Submitted Successfully.", "success");
+            })
+            .catch((error) => {
+              swal("Error", "Something went wrong. please try again!", "error");
+            });
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>     
+
+</body>
+</html>

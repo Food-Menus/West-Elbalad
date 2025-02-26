@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+
+        <h1 class="logo" href>Egyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br>
+            <br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off" ><ion-icon name="close-outline" ></ion-icon>close</a>
+        </div>
+
+    </div>
+    <!------------------------------------------------------------>
+    <div class="main">
+
+        <div class="main-navbar">
+            <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline" ></ion-icon></div></div>
+            <div class="img"><img  src="../../Static/images/اساسيات/logo.png"></div>
+            <div class="profile"><a class="user" href="./Profile.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+        </div>
+        <!------------------------------------------------------------>
+        <br><h2 class="section__header">جدول القوائم  </h2>
+        <h3 style="text-align: center;" > للذهاب بشكل مباشر لجدول البيانات  </h3><hr>
+
+        <button id="Table1" class="telegram"> قائمة المشروبات الساخنة </button><hr>
+        <button id="Table2" class="telegram"> قائمة المشروبات الغازية  </button><hr>
+        <button id="Table3" class="telegram"> قائمة السموزي  </button><hr>
+        <button id="Table4" class="telegram"> قائمة الكوكتيلات  </button><hr>
+        <button id="Table5" class="telegram"> قائمة الكوكتيلات المنعشة </button><hr>
+        <button id="Table6" class="telegram"> قائمة الميلك تشيك </button><hr>
+        <button id="Table7" class="telegram"> قائمة الفربيه </button><hr>
+        <button id="Table8" class="telegram"> قائمة الفربتشينو  </button><hr>
+        <button id="Table9" class="telegram"> قائمة الحلويات </button><hr>
+        <button id="Table10" class="telegram"> قائمة مشروبات الطاقه  </button><hr>
+
+    
+        <br>  
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const username = localStorage.getItem('username');
+                if (!username) {
+                    window.location.href = './AuthPage.html';
+                } else {
+                    document.getElementById('username').textContent = username;
+                }
+            });
+            const Table1 = document.getElementById('Table1');
+            Table1.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1sRKMDyvSs_FoP_oU4tPYFZy3v-9vCTEYkfUgDT9_tDQ/edit?usp=drive_link';  });
+            const Table2 = document.getElementById('Table2');
+            Table2.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1nH7MGNS8qVBsRXCwgyR20PLzvtMD5Ile4gpLVLHWPQo/edit?usp=drive_link';  });
+            const Table3 = document.getElementById('Table3');
+            Table3.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/11PkgMf6YXHQsYK_bMf85WU_xjmltGUczUqagZMintps/edit?usp=drive_link';  });
+            const Table4 = document.getElementById('Table4');
+            Table4.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1K6WG9nV0DON8pe8ZnWFCXWLnKuuqH8c1Og58D0-C3Vk/edit?usp=drive_link';  });
+            const Table5 = document.getElementById('Table5');
+            Table5.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1EqaGUg-9z1rnyv3ISvXaFZxd3oCKmGQAPWLRNDOH38Y/edit?usp=drive_link';  });
+            const Table6 = document.getElementById('Table6');
+            Table6.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/16QRk1J4rF3JjlRS1ZTFC2uqCpFByTuQK_N1SThUFqsU/edit?usp=drive_link';  });
+            const Table7 = document.getElementById('Table7');
+            Table7.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1Qne2kCxDSsJCLBbyFL5ZA39qIZ_Uj0s2-CdLVz7a3ZU/edit?usp=drive_link';  });
+            const Table8 = document.getElementById('Table8');
+            Table8.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1J4QtK9eTt9rQJaKmRObdPpCw2PNPTI5OWu1dDAxjX0w/edit?usp=drive_link';  });
+            const Table9 = document.getElementById('Table9');
+            Table9.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1SS3SJ3q-jEUn8Zc_V_aap4idrg4JnEo8aZRQULrv4VE/edit?usp=drive_link';  });
+            const Table10 = document.getElementById('Table10');
+            Table10.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1xTjWk5INSydDdoX80phDJJpX0qHYaDcqL1F3-NutUew/edit?usp=drive_link';  });
+
+        </script>
+    
+        <!------------------------------------------------------------>
+        
+        </div>
+
+</body>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>      
+
+</html>

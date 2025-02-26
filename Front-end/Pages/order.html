@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h1 class="logo">ُEgyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br><br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+            <a href="./../Pages/about.html"><ion-icon name="people-circle-outline"></ion-icon>من نحن</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off"><ion-icon name="close-outline"></ion-icon>close</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main-navbar">
+            <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline"></ion-icon></div></div>
+            <div class="img"><img src="../../Static/images/اساسيات/logo.png"></div>
+            <div class="profile"><a class="user" href="./../../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+        </div>
+        <!------------------------------------------------------------>
+
+        <div>
+            <br><br>
+            <h1 class="title-ordero"> اكمل عملية الطلب </h1>
+            <h3 id="order" placeholder="ادخل طلبك" class="title-order"></h3>
+            <br>
+            <h3 id="totalPrice">السعر الإجمالي: 0</h3>
+
+            <input type="text" id="name" placeholder="ادخل اسمك" required>
+            <br>
+            <input type="text" id="address" placeholder="ادخل عنوانك" required>
+            <br>
+            <input type="text" id="number" placeholder="ادخل رقم هاتفك" required>
+            <br>
+            <input type="text" id="notes" placeholder="ملاحظاتك">
+            <br>
+            <div id="result"></div>
+            <button class="WhatsApp" id="submitOrder">إرسال الطلب</button>
+            <br>
+            <button class="delete-btn" id="clearCart"><ion-icon name="trash-outline" class="icon-2"></ion-icon>تفريغ سلة التسوق</button>
+        </div>
+        <!------------------------------------------------------------>
+    </div>
+
+    <script> 
+
+
+        const totalPriceElement = document.getElementById("totalPrice");
+
+        const orderElement = document.getElementById("order");
+        const storedData = localStorage.getItem("cartItems");
+
+
+        const dishes = JSON.parse(storedData);
+
+        let order = ` `;
+        dishes.forEach((dish) => { order += `* ${dish.name}\n `; });
+
+        console.log(orderElement)
+        console.log(storedData)
+        console.log(order)
+
+        if (storedData) {
+            const dishes = JSON.parse(storedData);
+            const dishCounts = {};
+            let totalPrice = 0;
+
+            const list = document.createElement('ul');
+            dishes.forEach(dish => {
+                dishCounts[dish.name] = (dishCounts[dish.name] || 0) + 1;
+                totalPrice += Number(dish.price); // تحويل السعر إلى رقم
+            });
+
+            // هنا نبدأ في الجزء الجديد لتخزين البيانات المعدلة
+            const updatedData = [];
+            for (const dishName in dishCounts) {
+                updatedData.push({
+                    name: dishName,
+                    count: dishCounts[dishName]
+                });
+
+                const listItem = document.createElement('li');
+                listItem.textContent = `${dishName} (عدد الطلبات: ${dishCounts[dishName]})`;
+                list.appendChild(listItem);
+
+
+                                // إضافة زر حذف مع تنسيق CSS
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'حذف العنصر'; 
+                deleteButton.classList.add('delete-button'); 
+    
+                deleteButton.addEventListener('click', function() {
+                    // حذف العنصر من القائمة
+                    this.parentNode.remove();
+    
+                    // حذف العنصر من الـ localStorage
+                    const storedData = JSON.parse(localStorage.getItem("cartItems"));
+                    const itemToDelete = this.parentNode.textContent.split(' (')[0];
+                    const indexToDelete = storedData.findIndex(item => item.name === itemToDelete);
+                    if (indexToDelete !== -1) {
+                        storedData.splice(indexToDelete, 1);
+                        localStorage.setItem("cartItems", JSON.stringify(storedData));
+                    }
+    
+                    swal('تم حذف العنصر بنجاح');
+                    location.reload();
+                });
+    
+                listItem.appendChild(deleteButton);
+                list.appendChild(listItem);
+            }
+            localStorage.setItem("userData", JSON.stringify(updatedData));
+
+            orderElement.appendChild(list);
+            totalPriceElement.textContent = `السعر الإجمالي: ${totalPrice} جنيه`; // عرض السعر الإجمالي
+        } else {
+            orderElement.textContent = "لا توجد بيانات مخزنة";
+            totalPriceElement.textContent = "السعر الإجمالي: 0";
+        }
+
+        const clearCartButton = document.getElementById('clearCart');
+
+        function clearLocalStorage() {
+            swal("ستقوم بتفريغ سلة التسوق!").then((willDelete) => {
+                if (willDelete) {
+                    localStorage.clear();
+                    setTimeout(function() { location.reload();}, 2000);
+                    swal('تم تفريغ سلة التسوق بنجاح');
+                } else {
+                    swal('تم الإلغاء');
+                }
+            });
+        }
+
+        clearCartButton.addEventListener('click', clearLocalStorage);
+
+        document.getElementById('submitOrder').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const number = document.getElementById('number').value;
+            const address = document.getElementById('address').value;
+            const notes = document.getElementById('notes').value;
+            const amount = totalPriceElement.textContent.split(" ")[2]; // التأكد من استخراج المبلغ الكلي
+
+            const scriptURL = "https://script.google.com/macros/s/AKfycbyhnLwVVM8aTfjOxYWi2TRSWV2M7TX5nRtYZS_645ySkdtTwlXu63P0nnbH0bMtuUnz/exec";
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('number', number);
+            formData.append('amount', amount);
+            formData.append('address', address);
+            formData.append('notes', notes);
+            formData.append('order', order);
+
+            fetch(scriptURL, { method: "POST", body: formData })
+                .then(response => {
+                    swal("تم الإرسال", "تم إرسال الطلب بنجاح.", "success");
+                    document.getElementById('name').value = '';
+                    document.getElementById('address').value = '';
+                    document.getElementById('notes').value = '';
+                })
+                .catch(error => {
+                    swal("خطأ", "حدث خطأ ما، يرجى المحاولة مرة أخرى!", "error");
+                });
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+
+        <h1 class="logo" href>Egyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br>
+            <br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off" ><ion-icon name="close-outline" ></ion-icon>close</a>
+        </div>
+
+    </div>
+    <!------------------------------------------------------------>
+    <div class="main">
+
+    <div class="main-navbar">
+        <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline" ></ion-icon></div></div>
+        <div class="img"><img  src="../../Static/images/اساسيات/logo.png"></div>
+        <div class="profile"><a class="user" href="./../../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+    </div>
+    <!------------------------------------------------------------>
+
+    <br><h2 class="section__header">مرحباً بك </h2><br>
+
+    <form id="loginForm">
+        <h4>برجاء تسجيل الدخول اولا لتتمكن من التعديل  </h4><br>
+        <input type="text" id="username" name="username" placeholder="أدخل أسم المستخدم">
+        <br>
+        <input type="text" id="password" name="password" placeholder="أدخل كلمة المرور">
+        <br>
+        <button type="submit"  class="WhatsApp" >تسجيل الدخول</button>
+    </form>
+
+    <!------------------------------------------------------------>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const googleSheetUrl = 'https://docs.google.com/spreadsheets/d/1SIQO8usDCmQPkzkbSSAJyHUrH2SRZx4jlJrUyFokHlo/gviz/tq?tqx=out:json';
+        const targetObject = {};
+    
+        fetch(googleSheetUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // الحصول على البيانات كنص
+            })
+            .then(data => {
+                // تحويل النص إلى JSON
+                const jsonData = JSON.parse(data.substr(47).slice(0, -2)); // إزالة بعض البيانات الزائدة
+                const rows = jsonData.table.rows;
+    
+                // إنشاء كائن لتخزين البيانات
+                const result = {};
+    
+                // ربط البيانات من الصفوف
+                rows.forEach(row => {
+                    const key = row.c[0] ? row.c[0].v : null; // أول خلية في العمود الأول
+                    const value = row.c[1] ? row.c[1].v : null; // أول خلية في العمود الثاني
+                    if (key && value) {
+                        result[key] = value; // ربط المفتاح بالقيمة
+                    }
+                });
+    
+    
+                for (const key in result) {
+                    if (result.hasOwnProperty(key)) {
+                        targetObject[key] = result[key];
+                    }
+                }
+
+                const loginForm = document.getElementById('loginForm');
+                const usernameInput = document.getElementById('username');
+                const passwordInput = document.getElementById('password');
+
+                loginForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const username = usernameInput.value;
+                    const password = passwordInput.value;
+
+                    // التحقق من صحة بيانات الدخول
+                    if (targetObject[username] && targetObject[username].toString() === password) {
+                        // تخزين بيانات الدخول في Local Storage
+                        localStorage.setItem('username', username);
+                        localStorage.setItem('password', password);
+
+                        // تحويل المستخدم إلى صفحة الملف الشخصي
+                        window.location.href = 'Profile.html';
+                        swal("تم التسجيل", "تم تسجيل الدخول بنجاح.", "success");
+                } else {
+                    swal("خطأ في تسجيل الدخول", 'اسم المستخدم أو كلمة المرور غير صحيحة', "error");
+                    }
+                });
+
+
+            })
+            .catch(error => {
+                console.error('Error fetching data from Google Sheets:', error);
+            });
+    </script>
+
+
+</body>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>   
+
+</html>

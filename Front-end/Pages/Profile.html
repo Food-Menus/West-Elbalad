@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+
+        <h1 class="logo" href>Egyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br>
+            <br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off" ><ion-icon name="close-outline" ></ion-icon>close</a>
+        </div>
+
+    </div>
+    <!------------------------------------------------------------>
+    <div class="main">
+
+    <div class="main-navbar">
+        <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline" ></ion-icon></div></div>
+        <div class="img"><img  src="../../Static/images/اساسيات/logo.png"></div>
+        <div class="profile"><a class="user" href="./../../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+    </div>
+    <!------------------------------------------------------------>
+    <div  style="display: flex; justify-content: center; align-items: center; width: 100px; margin-left: 35vw; margin-top: 10%;">
+    <img src="./../../Static/images/اساسيات/logoooo.png"></div>
+    <br><h2 class="section__header">T.S Dashbord</h2>
+    <h1 style="text-align: center;" >مرحباً بك يا  <span id="username"></span></h1><br>
+    <button id="Orders" class="WhatsApp">   طلبات العملاء   </button><br>
+    <button id="feedbacks" class="WhatsApp">  أراء العملاء  </button><br>
+    <button id="TableOfElement" class="telegram">  جداول قوائم الطعام  </button><br>
+    <button id="logoutButton" class="delete-btn">  تسجيل الخروج  </button><br>
+
+    <br>  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            if (!username) {
+                window.location.href = './AuthPage.html';
+            } else {
+                document.getElementById('username').textContent = username;
+            }
+        });
+        const logoutButton = document.getElementById('logoutButton');
+        logoutButton.addEventListener('click', () => {
+
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            window.location.href = './../../index.html';
+            swal("تم تسجيل الخروج", "تم تسجيل الخروج بنجاح.", "success");
+
+        });
+        const Orders = document.getElementById('Orders');
+        Orders.addEventListener('click', () => {  window.location.href = './Dashbord.html';  });
+        const feedbacks = document.getElementById('feedbacks');
+        feedbacks.addEventListener('click', () => { window.location.href = './feedbackmanger.html'; });
+        const TableOfElement = document.getElementById('TableOfElement');
+        TableOfElement.addEventListener('click', () => { window.location.href = './TableOfElements.html'; });
+    </script>
+
+    <!------------------------------------------------------------>
+    
+    </div>
+
+</body>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>      
+
+</html>

@@ -1,0 +1,168 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../Static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <title>ُEgyptian Burger</title>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+
+        <h1 class="logo" href>Egyptian Burger</h1>
+        <div class="sidebar-menus">
+            <br>
+            <br>
+            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
+            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+        </div>
+        <div class="menu-off">
+            <a href="#" class="menu-off" ><ion-icon name="close-outline" ></ion-icon>close</a>
+        </div>
+
+    </div>
+    <!------------------------------------------------------------>
+    <div class="main">
+
+    <div class="main-navbar">
+        <div class="profile"> <div class="menu-toggle"><ion-icon name="menu-outline" ></ion-icon></div></div>
+        <div class="img"><img  src="../../Static/images/اساسيات/logo.png"></div>
+        <div class="profile"><a class="user" href="./Profile.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+    </div>
+    <!------------------------------------------------------------>
+
+    <br><h2 class="section__header">أراء العملاء</h2>
+    <h3 style="text-align: center;" > أحرص علي سريه بيانات العملاء </h3><br>
+    <button id="scrollToBottomBtn" class="WhatsApp"> احدث الأراء </button><br>
+    <div id="data-container"></div>
+    <button id="scrollToBottomBtn1" class="WhatsApp"> اعادة تحمل الصفحة </button><br>
+    <button id="Table1" class="telegram"> جدول بيانات أراء العملاء </button><br>
+
+    <br>
+    <script>
+
+        const sheetID = '1uInyI065CuO2cgFvq8OrrUzLJzZvR0TKJ_7kWh4L_98';
+        const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
+
+        fetch(base)
+            .then(response => response.text())
+            .then(data => {
+                const json = JSON.parse(data.substring(47).slice(0, -2));
+                const tableData = json.table.rows;
+                const dataContainer = document.getElementById('data-container');
+    
+                tableData.forEach((row, index) => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+    
+                    const name = row.c && row.c[0] ? row.c[0].v : "";
+                    const feedback = row.c && row.c[1] ? row.c[1].v : "";
+                    const number = row.c && row.c[2] ? row.c[2].v : "";
+                    const condition = row.c && row.c[3] ? row.c[3].v : "";
+    
+                    const cardId = `card-${index}`;
+                    const connectedId = `connected-${index}`;
+                    const executedId = `executed-${index}`;
+                    const completeId = `complete-${index}`; // Corrected ID
+    
+                    card.innerHTML = `
+                        <div class="card-content">
+                            <h2>الاسم : ${name}</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">  رأيه : ${feedback}</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">  رقم هاتفه : ${number}</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">  حاله العميل : ${condition}</div>
+                        </div><hr>
+                        <label class="checkybox">
+                            <input type="checkbox" id="${executedId}" name="executed-${index}" value="executed">   تم حلها
+                        </label>
+                        <label class="checkybox">
+                            <input type="checkbox" id="${connectedId}" name="connected-${index}" value="connected">  جاري العمل عليها
+                        </label>
+                    `;
+                
+                    dataContainer.appendChild(card);
+    
+                    const connectedCheckbox = document.getElementById(connectedId);
+                    const executedCheckbox = document.getElementById(executedId);
+    
+                    const storedConnected = localStorage.getItem(connectedId);
+                    if (storedConnected === 'true') {
+                        connectedCheckbox.checked = true;
+                    }
+    
+                    const storedExecuted = localStorage.getItem(executedId);
+                    if (storedExecuted === 'true') {
+                        executedCheckbox.checked = true;
+                    }
+    
+    
+                    connectedCheckbox.addEventListener('change', () => {
+                        localStorage.setItem(connectedId, connectedCheckbox.checked);
+                    });
+    
+                    executedCheckbox.addEventListener('change', () => {
+                        localStorage.setItem(executedId, executedCheckbox.checked);
+                    });
+                    
+                });
+            })
+            .catch(error => console.error(error));
+
+    </script>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            if (!username) {
+                window.location.href = './AuthPage.html';
+            } else {
+                document.getElementById('username').textContent = username;
+            }
+        });
+
+    </script>
+
+
+    <script>
+        const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
+        scrollToBottomBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth' // لجعل التمرير سلسًا
+        });
+        });
+        const scrollToBottomBtn1 = document.getElementById('scrollToBottomBtn1');
+        scrollToBottomBtn1.addEventListener('click', () => { location.reload(); });
+        const Table1 = document.getElementById('Table1');
+        Table1.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1uInyI065CuO2cgFvq8OrrUzLJzZvR0TKJ_7kWh4L_98/edit?usp=drive_link';  });
+         
+    </script>
+
+    <!------------------------------------------------------------>
+    
+    </div>
+
+</body>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script>
+    <script src="./../../Back-end/app.js"></script>      
+
+</html>
