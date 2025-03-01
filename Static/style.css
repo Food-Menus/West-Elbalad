@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&display=swap);
+
+/* splash-screen */
+
 :root {
     --primaryColor: #ffffff;
     --seconderyColor: #647953;
@@ -2351,7 +2354,7 @@ hr {
 #splash-screen img {
     width: 100vw;
     /* الحجم الأصلي للصورة */
-    animation: zoomAndFade 3s;
+    animation: zoomAndFade 2s;
     /* تشغيل تأثير zoomAndFade */
 }
 

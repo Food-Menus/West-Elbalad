@@ -298,20 +298,6 @@
             });
         }, 1000); // تأخير بدء التأثير (يمكنك تعديله)
         });
-        window.addEventListener('load', () => {
-            const splashScreen = document.getElementById('splash-screen');
-            const splashAudio = document.getElementById('splash-audio');
-
-            // تشغيل الصوت عند الضغط على الشاشة
-            splashScreen.addEventListener('click', () => {
-                splashAudio.play();
-                setTimeout(() => {
-                    splashScreen.style.display = 'none';
-                    splashAudio.pause();
-                    splashAudio.currentTime = 0;
-                }, 2000);
-            });
-        });
 
         document.getElementById('download-button').addEventListener('click', (event) => {
             swal("جاري التنزيل ", "جاري تنزيل التطبيق", "success");
