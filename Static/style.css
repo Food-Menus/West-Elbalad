@@ -274,6 +274,7 @@ body {
     width: 100%;
     height: 350px;
     gap: 2.7rem;
+
 }
 
 .filter-wrapper a {
@@ -293,7 +294,9 @@ body {
     border: 1px solid var(--softGreenColor);
     font-size: 25px;
     cursor: pointer;
+    /* animation: move 60s linear infinite ; */
     animation: move 60s linear infinite ;
+
 
 }
 
@@ -306,7 +309,8 @@ body {
     font-size: 100px;
     background-color: var(--softGreenColor);
     color: var(--filter-icon);
-    border-radius: 10px
+    border-radius: 10px;
+
 }
 
 .filter-card:hover {
@@ -2411,3 +2415,12 @@ hr {
         transform: translateX(-200%);
     }
 }
+
+
+
+
+
+
+
+
+/* main-highlight */
