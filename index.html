@@ -47,12 +47,39 @@
 
     <section>
 
-        <div class="line">
-            <marquee direction="right" class="marquee"> <p id="marquee"> </p>
-            </marquee>
+        <div class="main-highlight">
+
+        <div class="marqueee">
+                <div class="marqueee-content">
+                    <img src="./Static/111.jpg" alt="Image 1">
+                    <img src="./Static/222.jpg" alt="Image 2">
+                    <img src="./Static/333.jpg" alt="Image 3">
+                    <img src="./Static/444.jpg" alt="Image 4">
+                    <img src="./Static/555.jpg" alt="Image 5">
+                    <img src="./Static/666.jpg" alt="Image 6">
+                    <img src="./Static/777.jpg" alt="Image 7">
+                    <img src="./Static/888.jpg" alt="Image 8">
+                    <img src="./Static/999.jpg" alt="Image 9">
+                    <img src="./Static/111.jpg" alt="Image 10">
+                    <img src="./Static/222.jpg" alt="Image 11">
+                    <img src="./Static/333.jpg" alt="Image 12">
+                    <img src="./Static/444.jpg" alt="Image 13">
+                    <img src="./Static/555.jpg" alt="Image 14">
+                    <img src="./Static/666.jpg" alt="Image 15">
+                    <img src="./Static/777.jpg" alt="Image 16">
+                    <img src="./Static/888.jpg" alt="Image 17">
+                    <img src="./Static/999.jpg" alt="Image 18">
+                </div>
         </div>
+
+        <marquee direction="right" class="marquee"> <p id="marquee"> </p>
+        </marquee>
+        </div>
+        
     <!----------------------------->
+
         <div class="total-menus">
+          
 
             <div class="main-highlight">
 
@@ -80,10 +107,14 @@
                 </div> -->
 
 
-                <video width="100%" height="100%" autoplay loop>
-                    <source src="./Static/video/0310.mp4" type="video/mp4">
-                    متصفحك لا يدعم علامة الفيديو.
-                </video>
+                <div style="position: relative;">
+                    <video id="myVideo" width="100%" height="100%" autoplay loop>
+                        <source src="./Static/video/0310.mp4" type="video/mp4">
+                    </video>
+                    <button id="muteButton" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; ">
+                        <img id="muteIcon" src="./Static/images/اساسيات/volume-up.png" alt="Mute/Unmute">
+                    </button>
+                </div>
                   
             </div>
 
@@ -306,6 +337,21 @@
 
         document.getElementById('download-button').addEventListener('click', (event) => {
             swal("جاري التنزيل ", "جاري تنزيل التطبيق", "success");
+        });
+
+
+        const video = document.getElementById('myVideo');
+        const muteButton = document.getElementById('muteButton');
+        const muteIcon = document.getElementById('muteIcon');
+
+        muteButton.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteIcon.src = "./Static/images/اساسيات/volume-up.png"; // رمز الصوت مرتفع
+            } else {
+                video.muted = true;
+                muteIcon.src = "./Static/images/اساسيات/volume-mute.png"; // رمز الصوت مكتوم
+            }
         });
 
     </script>

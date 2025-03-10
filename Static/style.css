@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&display=swap);
 
 /* splash-screen */
-
+    /* animation: move 60s linear infinite ; */
 :root {
     --primaryColor: #ffffff;
     --seconderyColor: #647953;
@@ -139,7 +139,7 @@ body {
 
 .main-highlight {
     width: 48%;
-    margin: .1%;
+    margin: 0.1%;
     height: 700px;
     margin-top: 15px;
     margin-bottom: 9px;
@@ -176,6 +176,19 @@ body {
 .back:hover,
 .next:hover {
     color: var(--primaryColor)
+}
+
+
+#muteIcon {
+    width: 25px; /* تغيير العرض إلى 25 بكسل */
+    height: 25px; /* تغيير الارتفاع إلى 25 بكسل */
+    background-color: #e6ffd1;
+    border-radius: 50px;
+    padding: 5px;
+    position: absolute;
+    margin: 10px;
+    top: 10px; /* أو أي قيمة أخرى لتحديد المسافة من الأعلى */
+    left: 10px; /* أو أي قيمة أخرى لتحديد المسافة من اليسار */
 }
 
 .highlight-wrapper {
@@ -295,7 +308,7 @@ body {
     font-size: 25px;
     cursor: pointer;
     /* animation: move 60s linear infinite ; */
-    animation: move 60s linear infinite ;
+    /* animation: move 60s linear infinite ; */
 
 
 }
@@ -586,9 +599,8 @@ img {
 }
 
 .marquee {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 60px;
+    font-size: 30px;
+    font-weight: bold; /* لجعل الخط عريضًا */
     color: var(--marquee);
 
 }
@@ -1053,7 +1065,6 @@ button {
 
 
 .marqueee {
-    margin-top: 7px;
     overflow: hidden;
     white-space: nowrap;
 }
