@@ -104,10 +104,47 @@
                         <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
                         <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
                     </div> -->
-                    <h2 class="main-title" > أختار ياباشا اللي تحبه</h2>
+                    <h2 class="main-title" > أختار من هنا اللي قلبك يحبه  </h2>
                 </div>
 
-                <div class="filter-wrapper">
+
+
+                <div class="carousel" id="carousel">
+                    <div class="carousel-images">
+                        <div class="carousel-item" >
+                            <a  href="./Front-end/Menus/Hot_drinks.html">
+                            <img src="./../../Static/111.jpg"  alt="وصف الصورة 1" class="active">
+                            <p>المشروبات الساخنه</p></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./Front-end/Menus/Soft_drinks.html">
+                            <img src="./../../Static/222.jpg" alt="وصف الصورة 2" class="small">
+                            <p>مشروبات غازيه</p></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./Front-end/Menus/Smoothie_drinks.html" >
+                            <img src="./../../Static/333.jpg" alt="وصف الصورة 3" class="small">
+                            <p>مشروبات سموزي</p></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./Front-end/Menus/Cocktails.html">
+                            <img src="./../../Static/444.jpg" alt="وصف الصورة 4" class="small">
+                            <p>كوكتيلات</p></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./Front-end/Menus/freshing_cocktails.html">
+                            <img src="./../../Static/555.jpg" alt="وصف الصورة 5">
+                            <p> كوكتيلات فريش </p></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!-- <div class="filter-wrapper">
 
                 <a href="./Front-end/Menus/Hot_drinks.html">
                     <div class="filter-card">
@@ -185,7 +222,7 @@
                         <p>الحلويــات</p>
                     </div>
                 </a>
-                </div>
+                </div> -->
             </div>
             
     
@@ -334,7 +371,77 @@
                 muteIcon.src = "./Static/images/اساسيات/volume-mute.png"; // رمز الصوت مكتوم
             }
         });
+        
 
+
+
+
+        let currentIndex = 0; // بدأ من الصورة الأولى
+        const items = document.querySelectorAll('.carousel-item');
+
+        function updateCarousel() {
+            items.forEach((item, index) => {
+                const img = item.querySelector('img');
+                item.classList.remove('active');
+                img.classList.remove('small');
+
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else if (index === (currentIndex + 1) % items.length || index === (currentIndex + 2) % items.length) {
+                    img.classList.add('small');
+                }
+            });
+
+            // تحريك الكاروسيل
+            const newTransform = -currentIndex * 33.33; // حساب التحرك
+            document.querySelector('.carousel-images').style.transform = `translateX(${newTransform}%)`;
+        }
+
+        // التحكم باللمس
+        let startX;
+        let moveX;
+        let isMoving = false;
+
+        document.getElementById('carousel').addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            isMoving = true;
+        });
+
+        document.getElementById('carousel').addEventListener('touchmove', (event) => {
+            if (isMoving) {
+                moveX = event.touches[0].clientX;
+                const diffX = startX - moveX;
+
+                if (Math.abs(diffX) > 50) {
+                    isMoving = false;
+
+                    if (diffX > 0 && currentIndex < items.length - 1) {
+                        currentIndex++; // تمرير لليسار
+                    } else if (diffX < 0 && currentIndex > 0) {
+                        currentIndex--; // تمرير لليمين
+                    }
+                    updateCarousel();
+                }
+            }
+        });
+
+        document.getElementById('carousel').addEventListener('touchend', () => {
+            isMoving = false; // إعادة تعيين
+        });
+
+        // التحكم بالأسهم
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' && currentIndex < items.length - 1) {
+                currentIndex++; // تمرير لليسار
+                updateCarousel();
+            } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+                currentIndex--; // تمرير لليمين
+                updateCarousel();
+            }
+        });
+
+        // تحديث الكاروسيل عند التحميل
+        updateCarousel();
     </script>
 
 </body>

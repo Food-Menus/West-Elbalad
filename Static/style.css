@@ -2434,4 +2434,58 @@ hr {
 
 
 
-/* main-highlight */
+
+
+.carousel {
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: var(--softGreenColor);
+    position: relative;
+    height: 100%; /* ارتفاع الكاروسيل */
+    display: flex;
+    justify-content: center; /* لتوسيط العنصر */
+    align-items: center; /* لتوسيع العنصر عموديًا */
+    overflow: hidden; /* إخفاء الصور غير المعروضة */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 33.33%; /* عرض كل عنصر */
+    text-align: center; /* لتوسيع النص في المنتصف */
+    transition: transform 0.5s ease;
+    padding-left: 10px;
+
+}
+
+.carousel-item img {
+    width: 100%; /* عرض الصورة */
+    border-radius: 15px;
+    display: block; /* لجعل الصورة عنصر بلوك */
+    transition: transform 0.5s ease, border-radius 0.5s ease; /* إضافة انتقال لـ border-radius */
+
+}
+
+.carousel-item.active img {
+    transform: scale(1); /* زيادة حجم الصورة النشطة */
+}
+
+.carousel-item img.small {
+    transform: scale(0.7); /* حجم الصور الصغيرة */
+    border-radius: 50px;
+}
+
+.carousel-item p {
+    font-size: 12px;
+    margin-top: 1px;
+    color: var(--whiteHeader);
+    text-decoration: none;
+
+}
+.carousel-item a {
+    text-decoration: none;
+
+}
