@@ -1383,7 +1383,7 @@ button {
     }
 
     .marquee {
-        margin-top: 7px;
+        margin: 0px;
         font-size: 50px;
         color: var(--marquee)
     }
@@ -1658,7 +1658,7 @@ button {
     }
 
     .marquee {
-        margin-top: 15px;
+        margin: 0px;
         font-size: 20px;
         color: var(--marquee)
     }
@@ -2054,7 +2054,7 @@ button {
     }
 
     .marquee {
-        margin-top: 5px;
+        margin: 0px;
         font-size: 20px;
         color: var(--marquee)
     }
@@ -2397,7 +2397,7 @@ hr {
 
 
 .marqueee {
-    margin-top: 7px;
+    margin: 0px;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -2407,7 +2407,7 @@ hr {
 .marqueee img {
     display: inline-block;
     /* استخدام inline-block لجعل العناصر بجانب بعضها */
-    width: 100px;
+    width:  80px;
     /* يمكن تعديل الارتفاع حسب الحاجة */
 }
 
