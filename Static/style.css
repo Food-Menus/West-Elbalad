@@ -1145,7 +1145,7 @@ button {
     width: 100%; /* عرض الصورة */
     border-radius: 15px;
     display: block; /* لجعل الصورة عنصر بلوك */
-    transition: transform 0.5s ease, border-radius 0.5s ease , box-shadow 2s ease; /* إضافة انتقال لـ border-radius */
+    transition: transform 0.5s ease, border-radius 1s ease , box-shadow 2s ease; /* إضافة انتقال لـ border-radius */
     box-shadow: 0 0px 20px  5px rgba(0, 0, 0, 0.5); /* إضافة الظل */
 
 }
