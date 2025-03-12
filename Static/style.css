@@ -98,9 +98,9 @@ body {
 
     background-color: rgba(0, 0, 0, 0.5); /* خلفية سوداء نصف شفافة */
 
-    background-image: url("./images/اساسيات/the-cute-hanging-arabic-lantern-celebrates-ramadan-kareem-in-seamless-pattern-vector.jpg"); /* استبدل your-pattern-image.png بمسار صورتك */
+    background-image: url("./images/اساسيات/ramadan-islamic-pattern-design-ramadan-islamic-pattern-design-can-be-used-many-companies-making-cushins-tablo-181498455.webp"); /* استبدل your-pattern-image.png بمسار صورتك */
     background-repeat: repeat;
-    animation: moveBackground 200s linear infinite; /* تشغيل الحركة */
+    animation: moveBackground 300s linear infinite; /* تشغيل الحركة */
 
     margin-left: 250px
 }
