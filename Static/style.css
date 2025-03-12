@@ -2,6 +2,7 @@
 
 /* splash-screen */
     /* animation: move 60s linear infinite ; */
+    /* main-highlight */
 :root {
     --primaryColor: #ffffff;
     --seconderyColor: #647953;
@@ -82,8 +83,36 @@ body {
     padding-top: 2%;
     padding-right: 2%;
     padding-left: 2%;
-    background-color: var(--softGreenColor);
+
+
+    /* background-color: var(--softGreenColor) */
+
+    /* background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); */
+
+
+    /* background: linear-gradient(45deg, #f0f0f0 25%, #e0e0e0 25%, #e0e0e0 50%, #f0f0f0 50%, #f0f0f0 75%, #e0e0e0 75%, #e0e0e0 100%);
+    background-size: 20px 20px;  */
+
+    /* background-image: url("your-pattern-image.png"); 
+    background-repeat: repeat;  */
+
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية سوداء نصف شفافة */
+
+    background-image: url("./images/اساسيات/ramadan-islamic-pattern-design-ramadan-islamic-pattern-design-can-be-used-many-companies-making-cushins-tablo-181498455.webp"); /* استبدل your-pattern-image.png بمسار صورتك */
+    background-repeat: repeat;
+    animation: moveBackground 200s linear infinite; /* تشغيل الحركة */
+
     margin-left: 250px
+}
+
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0; /* بداية الحركة */
+    }
+    100% {
+        background-position: 100% 100%; /* نهاية الحركة */
+    }
 }
 
 .main-navbar {
@@ -146,6 +175,17 @@ body {
     margin-top: 15px;
     margin-bottom: 9px;
     padding: 3%;
+    background-color: var(--seconderyColor);
+    border-radius: 10px;
+    box-shadow: 0 0 14px 6px rgba(0, 0, 0, .2)
+}
+
+.main-highlight2 {
+    width: 96vw;
+    margin: 0.1%;
+    margin-top: 15px;
+    margin-bottom: 9px;
+    padding: 15px;
     background-color: var(--seconderyColor);
     border-radius: 10px;
     box-shadow: 0 0 14px 6px rgba(0, 0, 0, .2)
@@ -1564,13 +1604,24 @@ button {
         flex-direction: column
     }
 
+    .main-highlight2 {
+        width: 100%;
+        margin: .1%;
+        height: 40%;
+        margin-top: 8px;
+        margin-bottom: 9px;
+        padding: 7px;
+        background-color: var(--seconderyColor);
+        border-radius: 10px
+    }
+
     .main-highlight {
         width: 100%;
         margin: .1%;
         height: 40%;
         margin-top: 8px;
         margin-bottom: 9px;
-        padding: 3%;
+        padding: 10px;
         background-color: var(--seconderyColor);
         border-radius: 10px
     }
@@ -2493,3 +2544,36 @@ hr {
     text-decoration: none;
 
 }
+
+
+
+
+
+
+
+
+.marquee-container {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .marquee-content img {
+    display: inline-block;
+    margin-right: 2px;
+    width: 90px;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

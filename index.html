@@ -49,9 +49,17 @@
 
     <section>
 
-        <div class="main-highlight">
+        <div class="main-highlight2">
 
-        <div class="marqueee">
+
+
+            <div class="marquee-container">
+                <div class="marquee-content">
+                  </div>
+              </div>
+
+
+        <!-- <div class="marqueee">
                 <div class="marqueee-content">
                     <img src="./Static/111.jpg" alt="Image 1">
                     <img src="./Static/222.jpg" alt="Image 2">
@@ -72,9 +80,9 @@
                     <img src="./Static/888.jpg" alt="Image 17">
                     <img src="./Static/999.jpg" alt="Image 18">
                 </div>
-        </div>
+        </div> -->
 
-        <marquee direction="right" class="marquee"> <p id="marquee"> </p>
+        <marquee direction="right" class="marquee"> <p id="marquee" scrollamount="10s"> </p>
         </marquee>
 
         </div>
@@ -442,6 +450,39 @@
 
         // تحديث الكاروسيل عند التحميل
         updateCarousel();
+
+
+
+
+
+
+
+        const marqueeContent = document.querySelector('.marquee-content');
+        const images = [
+        './Static/111.jpg',
+        './Static/222.jpg',
+        './Static/333.jpg',
+        './Static/444.jpg',
+        './Static/555.jpg',
+        './Static/666.jpg',
+        './Static/777.jpg',
+        './Static/888.jpg',
+        './Static/999.jpg',
+        ];
+
+        // إنشاء نسخة متكررة من الصور
+        for (let i = 0; i < 10; i++) { // يمكنك تغيير عدد التكرارات حسب الحاجة
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            marqueeContent.appendChild(img);
+        });
+        }
+
+        // تعديل سرعة الحركة بناءً على عدد الصور
+        const totalImages = marqueeContent.querySelectorAll('img').length;
+        const animationDuration = totalImages * 10; // يمكنك تعديل 0.5 لتغيير السرعة
+        marqueeContent.style.animationDuration = `${animationDuration}s`;
     </script>
 
 </body>
