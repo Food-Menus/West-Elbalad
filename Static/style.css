@@ -3,6 +3,7 @@
 /* splash-screen */
     /* animation: move 60s linear infinite ; */
     /* main-highlight */
+    /* carousel */
 :root {
     --primaryColor: #ffffff;
     --seconderyColor: #647953;
@@ -169,6 +170,8 @@ body {
 }
 
 .main-highlight {
+    border: 1.5px solid var(--softGreenColor); /* إضافة الإطار */
+
     width: 48%;
     margin: 0.1%;
     height: 700px;
@@ -181,6 +184,8 @@ body {
 }
 
 .main-highlight2 {
+    border: 1.5px solid var(--softGreenColor); /* إضافة الإطار */
+
     width: 96vw;
     margin: 0.1%;
     margin-top: 15px;
@@ -716,7 +721,7 @@ img {
 .footer__bar {
     text-align: center;
     width: 100%;
-    background-color: var(--softGreenColor)
+    background-color: var(--greyColor)
 }
 
 .footer__bar p {
@@ -726,7 +731,7 @@ img {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--softGreenColor);
+    background-color: var(--greyColor);
     text-align: center
 }
 
@@ -1106,6 +1111,85 @@ button {
 
 
 
+
+.carousel {
+    border: 2px solid var(--darkGreyColor); /* إضافة الإطار */
+
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: var(--softGreenColor);
+    position: relative;
+    height: 80%; /* ارتفاع الكاروسيل */
+    display: flex;
+    justify-content: center; /* لتوسيط العنصر */
+    align-items: center; /* لتوسيع العنصر عموديًا */
+    overflow: hidden; /* إخفاء الصور غير المعروضة */
+}
+
+
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 33.33%; /* عرض كل عنصر */
+    text-align: center; /* لتوسيع النص في المنتصف */
+    transition: transform 0.5s ease;
+    padding-left: 10px;
+
+}
+
+.carousel-item img {
+    width: 100%; /* عرض الصورة */
+    border-radius: 15px;
+    display: block; /* لجعل الصورة عنصر بلوك */
+    transition: transform 0.5s ease, border-radius 0.5s ease , box-shadow 2s ease; /* إضافة انتقال لـ border-radius */
+    box-shadow: 0 0px 20px  5px rgba(0, 0, 0, 0.5); /* إضافة الظل */
+
+}
+
+.carousel-item.active img {
+    transform: scale(0.9); /* زيادة حجم الصورة النشطة */
+    box-shadow: 0 0px 20px  5px rgb(255, 214, 143); /* إضافة الظل */
+
+}
+
+.carousel-item img.small {
+    transform: scale(0.7); /* حجم الصور الصغيرة */
+    border-radius: 50px;
+}
+
+
+.carousel-item p {
+    font-size: 30px;
+    margin-top: 1px;
+    color: var(--whiteHeader);
+    text-decoration: none;
+
+}
+
+.carousel-item a {
+    text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .marqueee {
     overflow: hidden;
     white-space: nowrap;
@@ -1318,13 +1402,6 @@ button {
         transform: translateX(-200%);
     }
 }
-
-
-
-
-
-
-
 
 
     .journey__grid {
@@ -1756,6 +1833,30 @@ button {
 }
 
 @media screen and (max-width:800px) {
+
+    
+
+    .carousel {
+        padding-top: 10px;
+        border-radius: 10px;
+        background-color: var(--softGreenColor);
+        position: relative;
+        height: 100%; /* ارتفاع الكاروسيل */
+        display: flex;
+        justify-content: center; /* لتوسيط العنصر */
+        align-items: center; /* لتوسيع العنصر عموديًا */
+        overflow: hidden; /* إخفاء الصور غير المعروضة */
+    }
+
+    
+    .carousel-item p {
+        font-size: 12px;
+        margin-top: 1px;
+        color: var(--whiteHeader);
+        text-decoration: none;
+
+    }
+    
     #overlayImage {
         position: fixed;
         width: 300px;
@@ -1919,19 +2020,19 @@ button {
 @media screen and (max-width:415px) {
     .footer__bar {
         text-align: center;
-        width: 95%;
-        background-color: var(--softGreenColor)
+        width: 100%;
+        background-color: var(--greyColor)
     }
 
     .footer__bar p {
-        color: var(--blackColor);
+        color: var(--marquee);
         text-align: center;
         font-size: 13px;
         padding-bottom: 10px;
         left: 0;
         bottom: 0;
-        width: 105%;
-        background-color: var(--softGreenColor);
+        width: 100%;
+        background-color: var(--greyColor);
         text-align: center
     }
 
@@ -2484,66 +2585,6 @@ hr {
 
 
 
-
-
-
-
-
-
-
-.carousel {
-    padding-top: 10px;
-    border-radius: 10px;
-    background-color: var(--softGreenColor);
-    position: relative;
-    height: 100%; /* ارتفاع الكاروسيل */
-    display: flex;
-    justify-content: center; /* لتوسيط العنصر */
-    align-items: center; /* لتوسيع العنصر عموديًا */
-    overflow: hidden; /* إخفاء الصور غير المعروضة */
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    min-width: 33.33%; /* عرض كل عنصر */
-    text-align: center; /* لتوسيع النص في المنتصف */
-    transition: transform 0.5s ease;
-    padding-left: 10px;
-
-}
-
-.carousel-item img {
-    width: 100%; /* عرض الصورة */
-    border-radius: 15px;
-    display: block; /* لجعل الصورة عنصر بلوك */
-    transition: transform 0.5s ease, border-radius 0.5s ease; /* إضافة انتقال لـ border-radius */
-
-}
-
-.carousel-item.active img {
-    transform: scale(1); /* زيادة حجم الصورة النشطة */
-}
-
-.carousel-item img.small {
-    transform: scale(0.7); /* حجم الصور الصغيرة */
-    border-radius: 50px;
-}
-
-.carousel-item p {
-    font-size: 12px;
-    margin-top: 1px;
-    color: var(--whiteHeader);
-    text-decoration: none;
-
-}
-.carousel-item a {
-    text-decoration: none;
-
-}
 
 
 
