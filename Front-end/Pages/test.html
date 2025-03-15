@@ -4,61 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../../Static/style.css">
+    <link rel="stylesheet" href="./Static/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
-    <title>ُEgyptian Burger</title>
-    <style>
-        .carousel {
-            position: relative;
-            height: 100%; /* ارتفاع الكاروسيل */
-            display: flex;
-            justify-content: center; /* لتوسيط العنصر */
-            align-items: center; /* لتوسيع العنصر عموديًا */
-            overflow: hidden; /* إخفاء الصور غير المعروضة */
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            min-width: 33.33%; /* عرض كل عنصر */
-            text-align: center; /* لتوسيع النص في المنتصف */
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item img {
-            width: 90%; /* عرض الصورة */
-            border-radius: 10px;
-            display: block; /* لجعل الصورة عنصر بلوك */
-            margin: 0 auto; /* لتوسيط الصورة */
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item.active img {
-            transform: scale(1); /* زيادة حجم الصورة النشطة */
-        }
-
-        .carousel-item img.small {
-            transform: scale(0.5); /* حجم الصور الصغيرة */
-        }
-
-        .carousel-item p {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="./Static/images/اساسيات/logoooo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <title>West Elbalad</title>
 </head>
 
 <body>
     <div class="sidebar">
-        <h1 class="logo">Egyptian Burger</h1>
+        <h2 class="logo" href> West Elbalad - وسط البلد </h2>
         <div class="sidebar-menus">
-            <br><br>
-            <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> القائمة الرئيسية </a>
-            <a href="https://www.facebook.com/Techno.Science.TC"><ion-icon name="logo-facebook"></ion-icon> صفحة الفيسبوك</a>
-            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon>تواصل معنا</a>
+            <br>
+            <a href="https://www.facebook.com/westelbaladofficial"><ion-icon name="logo-facebook"></ion-icon>صفحتنا ع الفيس</a>
+            <a href="https://www.tiktok.com/@westelbalad_official"><ion-icon name="logo-tiktok"></ion-icon>التيك توك بتعنا</a>
+            <a href="./Front-end/Pages/order.html"><ion-icon name="checkbox-outline"></ion-icon> كمل طلب </a>
+            <a href="https://wa.me/+201147182463?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon> كلمنا فأي وقت</a>
+            <a href="./Front-end/Pages/about.html"><ion-icon name="people-circle-outline"></ion-icon>إحنا مين؟</a>
+            <a href="./Front-end/Pages/feedback.html"><ion-icon name="people-circle-outline"></ion-icon>قولنا رأيك</a>
         </div>
         <div class="menu-off">
             <a href="#" class="menu-off"><ion-icon name="close-outline"></ion-icon>close</a>
@@ -70,39 +34,236 @@
             <div class="profile">
                 <div class="menu-toggle"><ion-icon name="menu-outline"></ion-icon></div>
             </div>
-            <div class="img"><img src="../../Static/images/اساسيات/logo.png"></div>
-            <div class="profile"><a class="user" href="./../../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a></div>
+            <div class="img"><img src="./Static/images/اساسيات/logo.png"></div>
+            <div class="profile"><a href="./Front-end/Pages/test.html" class="user"><ion-icon name="location-outline"></ion-icon></a></div>
         </div>
 
-        <div class="carousel" id="carousel">
-            <div class="carousel-images">
-                <!-- تكرار الصور لجعلها دائرية -->
-                <div class="carousel-item">
-                    <img src="./../../Static/111.jpg" alt="وصف الصورة 1" class="active">
-                    <p>وصف الصورة 1</p>
+        <section>
+            <div class="main-highlight2">
+                <div class="marquee-container">
+                    <div class="marquee-content"></div>
                 </div>
-                <div class="carousel-item">
-                    <img src="./../../Static/222.jpg" alt="وصف الصورة 2" class="small">
-                    <p>وصف الصورة 2</p>
+                <marquee direction="right" class="marquee">
+                    <p id="marquee" scrollamount="10s"></p>
+                </marquee>
+            </div>
+
+            <div class="total-menus">
+                <div class="main-highlight">
+                    <div style="position: relative;">
+                        <video id="myVideo" width="100%" height="100%" autoplay muted loop>
+                            <source src="./Static/video/0310.mp4" type="video/mp4">
+                        </video>
+                        <button id="muteButton" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer;">
+                            <img id="muteIcon" src="./Static/images/اساسيات/volume-mute.png" alt="Mute/Unmute">
+                        </button>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="./../../Static/333.jpg" alt="وصف الصورة 3" class="small">
-                    <p>وصف الصورة 3</p>
-                </div>
-                <div class="carousel-item">
-                    <img src="./../../Static/444.jpg" alt="وصف الصورة 4" class="small">
-                    <p>وصف الصورة 4</p>
-                </div>
-                <div class="carousel-item">
-                    <img src="./../../Static/555.jpg" alt="وصف الصورة 5">
-                    <p>وصف الصورة 5</p>
+
+                <div class="main-highlight">
+                    <div class="main-header">
+                        <h2 class="main-title">أختار من هنا اللي قلبك يحبه</h2>
+                    </div>
+
+                    <div class="button-container">
+                        <button onclick="showCarousel('carousel1')">عرض المشروبات الساخنة</button>
+                        <button onclick="showCarousel('carousel2')">عرض المشروبات الغازية</button>
+                    </div>
+
+                    <div class="carousel carousel1" id="carousel1" style="display: none;">
+                        <div class="carousel-images">
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Hot_drinks.html">
+                                    <img src="./../../Static/111.jpg" alt="وصف الصورة 1" class="active">
+                                    <p>المشروبات الساخنه</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Soft_drinks.html">
+                                    <img src="./../../Static/222.jpg" alt="وصف الصورة 2" class="small">
+                                    <p>مشروبات غازيه</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Smoothie_drinks.html">
+                                    <img src="./../../Static/333.jpg" alt="وصف الصورة 3" class="small">
+                                    <p>مشروبات سموزي</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Cocktails.html">
+                                    <img src="./../../Static/444.jpg" alt="وصف الصورة 4" class="small">
+                                    <p>كوكتيلات</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/freshing_cocktails.html">
+                                    <img src="./Static/555.jpg" alt="وصف الصورة 5">
+                                    <p>كوكتيلات فريش</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel carousel2" id="carousel2" style="display: none;">
+                        <div class="carousel-images">
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Hot_drinks.html">
+                                    <img src="./../../Static/111.jpg" alt="وصف الصورة 1" class="active">
+                                    <p>المشروبات الساخنه</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Soft_drinks.html">
+                                    <img src="./../../Static/222.jpg" alt="وصف الصورة 2" class="small">
+                                    <p>مشروبات غازيه</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Smoothie_drinks.html">
+                                    <img src="./../../Static/333.jpg" alt="وصف الصورة 3" class="small">
+                                    <p>مشروبات سموزي</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/Cocktails.html">
+                                    <img src="./../../Static/444.jpg" alt="وصف الصورة 4" class="small">
+                                    <p>كوكتيلات</p>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./Front-end/Menus/freshing_cocktails.html">
+                                    <img src="./Static/555.jpg" alt="وصف الصورة 5">
+                                    <p>كوكتيلات فريش</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="journey__grid">
+                <div class="journey__card">
+                    <div class="journey__card__bg">
+                        <h4>عرض</h4>
+                        <h4 id="offer_1"></h4>
+                    </div>
+                    <div class="journey__card__content">
+                        <p id="offer_content_1"></p>
+                    </div>
+                </div>
+
+                <div class="journey__card">
+                    <div class="journey__card__bg">
+                        <h4>عرض</h4>
+                        <h4 id="offer_2"></h4>
+                    </div>
+                    <div class="journey__card__content">
+                        <p id="offer_content_2"></p>
+                    </div>
+                </div>
+
+                <div class="journey__card">
+                    <div class="journey__card__bg">
+                        <h4>عرض</h4>
+                        <h4 id="offer_3"></h4>
+                    </div>
+                    <div class="journey__card__content">
+                        <p id="offer_content_3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event__content">
+                <div class="event__image">
+                    <img src="./Static/images/اساسيات/event.png" alt="event" />
+                </div>
+                <div class="event__details">
+                    <h3 id="event_title_1"></h3>
+                    <h2 class="section__header" id="event_title_2"></h2>
+                    <p class="section__description" id="event_content"></p>
+                </div>
+            </div>
+
+            <div class="dilevry">
+                <h5 class="myButton" id="myButtoon"><ion-icon name="call-outline" style="position: relative; top: 7px; font-size: 25px;"></ion-icon> رقم الكافيه </h5>
+                <h5 id="showImage" class="myButton-1"><ion-icon name="qr-code" style="position: relative; top: 7px; font-size: 30px;"></ion-icon> الكيو ار كود </h5>
+                <h5 class="myButton"><a id="download-button" href="./Static/Egyptian Burger.apk" download style="position: relative; top: 7px; font-size: 25px;"> تنزيل التطبيق </a></h5>
+                <h5 class="myButton"><a href="./Front-end/Pages/Profile.html"><ion-icon name="people-circle-outline" style="position: relative; top: 7px; font-size: 30px;"></ion-icon> Profile</a></h5>
+
+                <div id="messageBox" class="hidden">
+                    <h3 class="phonesnum" id="phonesnum1">ارقام التواصل للشكاوي والأستفسارات</h3>
+                    <br>
+                    <h3 class="phonesnum"> 01147182463 </h3>
+                </div>
+            </div><br>
+
+            <div class="footer__bar">
+                <p>Copyright © 2025 Techno Science All rights reserved </p>
+            </div>
+        </section>
+
+        <img src="./Static/images/اساسيات/QRCode_Egy_Burger.png" id="overlayImage" alt="صورة عائمة" style="display: none;">
+        <a href="./Front-end/Pages/order.html">
+            <div class="counter"><span> عدد العناصر المحددة: 0 </span><ion-icon name="cart-outline" class="icon-1"></ion-icon></div>
+        </a>
     </div>
 
     <script>
-        let currentIndex = 0; // بدأ من الصورة الأولى
+        const base = `https://docs.google.com/spreadsheets/d/1jaYRIklHOBN7StRTNkXJ-FyqF6jmQ92DRElG103wLLw/gviz/tq?tqx=out:json`;
+
+        async function fetchDetails() {
+            const response = await fetch(base);
+            const data = await response.text();
+            const json = JSON.parse(data.substring(47).slice(0, -2));
+
+            const details = json.table.rows.map(row => row.c[0] ? row.c[0].v : 'غير متوفر');
+
+            document.getElementById('marquee').innerText = details[0];
+            document.getElementById('offer_1').innerText = details[1];
+            document.getElementById('offer_content_1').innerText = details[2];
+            document.getElementById('offer_2').innerText = details[3];
+            document.getElementById('offer_content_2').innerText = details[4];
+            document.getElementById('offer_3').innerText = details[5];
+            document.getElementById('offer_content_3').innerText = details[6];
+            document.getElementById('event_title_1').innerText = details[7];
+            document.getElementById('event_title_2').innerText = details[8];
+            document.getElementById('event_content').innerText = details[9];
+            document.getElementById('phonesnum1').innerText = details[10];
+        }
+
+        fetchDetails();
+
+        window.addEventListener('load', () => {
+            const splashScreen = document.getElementById('splash-screen');
+            const img = splashScreen.querySelector('img');
+
+            setTimeout(() => {
+                img.addEventListener('animationend', () => {
+                    splashScreen.style.display = 'none';
+                });
+            }, 1000);
+        });
+
+        document.getElementById('download-button').addEventListener('click', (event) => {
+            swal("جاري التنزيل ", "جاري تنزيل التطبيق", "success");
+        });
+
+        const video = document.getElementById('myVideo');
+        const muteButton = document.getElementById('muteButton');
+        const muteIcon = document.getElementById('muteIcon');
+
+        muteButton.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteIcon.src = "./Static/images/اساسيات/volume-up.png";
+            } else {
+                video.muted = true;
+                muteIcon.src = "./Static/images/اساسيات/volume-mute.png";
+            }
+        });
+
+        let currentIndex = 0;
         const items = document.querySelectorAll('.carousel-item');
 
         function updateCarousel() {
@@ -118,12 +279,10 @@
                 }
             });
 
-            // تحريك الكاروسيل
-            const newTransform = -currentIndex * 33.33; // حساب التحرك
+            const newTransform = -currentIndex * 33.33;
             document.querySelector('.carousel-images').style.transform = `translateX(${newTransform}%)`;
         }
 
-        // التحكم باللمس
         let startX;
         let moveX;
         let isMoving = false;
@@ -142,9 +301,9 @@
                     isMoving = false;
 
                     if (diffX > 0 && currentIndex < items.length - 1) {
-                        currentIndex++; // تمرير لليسار
+                        currentIndex++;
                     } else if (diffX < 0 && currentIndex > 0) {
-                        currentIndex--; // تمرير لليمين
+                        currentIndex--;
                     }
                     updateCarousel();
                 }
@@ -152,33 +311,69 @@
         });
 
         document.getElementById('carousel').addEventListener('touchend', () => {
-            isMoving = false; // إعادة تعيين
+            isMoving = false;
         });
 
-        // التحكم بالأسهم
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight' && currentIndex < items.length - 1) {
-                currentIndex++; // تمرير لليسار
+                currentIndex++;
                 updateCarousel();
             } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
-                currentIndex--; // تمرير لليمين
+                currentIndex--;
                 updateCarousel();
             }
         });
 
-        // تحديث الكاروسيل عند التحميل
         updateCarousel();
+
+        const marqueeContent = document.querySelector('.marquee-content');
+        const images = [
+            './Static/images/صور الشريط/111.jpg',
+            './Static/images/صور الشريط/222.jpg',
+            './Static/images/صور الشريط/333.jpg',
+            './Static/images/صور الشريط/444.jpg',
+            './Static/images/صور الشريط/555.jpg',
+            './Static/images/صور الشريط/666.jpg',
+            './Static/images/صور الشريط/777.jpg',
+            './Static/images/صور الشريط/888.jpg',
+            './Static/images/صور الشريط/999.jpg',
+        ];
+
+        for (let i = 0; i < 10; i++) {
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                marqueeContent.appendChild(img);
+            });
+        }
+
+        const totalImages = marqueeContent.querySelectorAll('img').length;
+        const animationDuration = totalImages * 10;
+        marqueeContent.style.animationDuration = `${animationDuration}s`;
+
+        function showCarousel(carouselId) {
+            // إخفاء جميع الكاروسيلات
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                carousel.style.display = 'none'; // إخفاء الكاروسيل
+            });
+
+            // عرض الكاروسيل المختار
+            document.getElementById(carouselId).style.display = 'block'; // عرض الكاروسيل
+        }
+
+        // عند التحميل، أخفي الكاروسيلات
+        document.addEventListener('DOMContentLoaded', () => {
+            showCarousel('carousel1'); // عرض carousel1 افتراضيًا
+        });
     </script>
 
-    <a href="./../../Front-end/Pages/order.html">
-        <div class="counter"><span> عدد العناصر المحددة: 0 </span><ion-icon name="cart-outline" class="icon-1"></ion-icon></div>
-    </a>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="./../../Back-end/JavaScript.js"></script>
-    <script src="./../../Back-end/script.js"></script>
-    <script src="./../../Back-end/app.js"></script>
+    <script src="./Back-end/JavaScript.js"></script>
+    <script src="./Back-end/script.js"></script>
+    <script src="./Back-end/app.js"></script>
 </body>
+
 </html>

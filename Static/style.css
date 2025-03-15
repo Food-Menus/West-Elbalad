@@ -4,6 +4,12 @@
     /* animation: move 60s linear infinite ; */
     /* main-highlight */
     /* carousel */
+    /* main-title */
+
+html {
+    scroll-behavior: smooth; /* يجعل التمرير سلسًا */
+}
+
 :root {
     --primaryColor: #ffffff;
     --seconderyColor: #647953;
@@ -16,7 +22,7 @@
     --marquee: #fff;
     --filter-icon: #647953;
 }
-
+/* marquee-content */
 /* main-header */
 
 * {
@@ -101,7 +107,7 @@ body {
 
     background-image: url("./images/اساسيات/ramadan-islamic-pattern-design-ramadan-islamic-pattern-design-can-be-used-many-companies-making-cushins-tablo-181498455.webp"); /* استبدل your-pattern-image.png بمسار صورتك */
     background-repeat: repeat;
-    animation: moveBackground 300s linear infinite; /* تشغيل الحركة */
+    animation: moveBackground 70s linear infinite; /* تشغيل الحركة */
 
     margin-left: 250px
 }
@@ -109,10 +115,10 @@ body {
 
 @keyframes moveBackground {
     0% {
-        background-position: 0 0; /* بداية الحركة */
+        background-position: 100% 0; /* ابدأ من اليمين */
     }
     100% {
-        background-position: 100% 100%; /* نهاية الحركة */
+        background-position: 0 0; /* انتهي في اليسار */
     }
 }
 
@@ -169,9 +175,9 @@ body {
     display: block
 }
 
+
 .main-highlight {
     border: 1.5px solid var(--softGreenColor); /* إضافة الإطار */
-
     width: 48%;
     margin: 0.1%;
     height: 700px;
@@ -182,6 +188,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 14px 6px rgba(0, 0, 0, .2)
 }
+
 
 .main-highlight2 {
     border: 1.5px solid var(--softGreenColor); /* إضافة الإطار */
@@ -205,8 +212,9 @@ body {
 }
 
 .main-title {
-    font-size: 60px;
-    padding-right: 15px
+    padding: 15px;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 .main-arrow {
@@ -224,6 +232,78 @@ body {
 .next:hover {
     color: var(--primaryColor)
 }
+
+
+
+
+
+
+
+/* أنيميشن لزيادة الطول تدريجيًا */
+@keyframes expandHeight {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 150px; /* يمكن تعديل القيمة حسب الحاجة */
+        opacity: 1;
+    }
+}
+
+/* أنيميشن لنقصان الطول تدريجيًا */
+@keyframes collapseHeight {
+    from {
+        max-height: 150px; /* يجب أن تكون نفس القيمة المستخدمة في expandHeight */
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+ 
+
+.carousel1-item, .carousel-item {
+    animation: expandHeight 1s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0; 
+    max-height: 0; 
+    margin-bottom: 0px; 
+    transition: max-height 1.5s ease-in-out, opacity 1.5s ease-in-out; 
+
+} 
+
+.carousel1-item:nth-child(1), .carousel-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.carousel1-item:nth-child(2), .carousel-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.carousel1-item:nth-child(3), .carousel-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.carousel1-item:nth-child(4), .carousel-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.carousel1-item:nth-child(5), .carousel-item:nth-child(5) {
+    animation-delay: 0.5s;
+} 
+
+.hide-item {
+    animation: collapseHeight 1.5s ease-in-out;
+    animation-fill-mode: forwards;
+} 
+
+
+
+
+
+
+
+
+
+
 
 
 #muteIcon {
@@ -1109,12 +1189,81 @@ button {
 
 
 
+.button-container {
+    display: flex; /* استخدام الفليكس لجعل الأزرار بجانب بعض */
+    justify-content: center; /* محاذاة الأزرار في المنتصف */
+    gap: 5px; /* إضافة مسافة بين الأزرار */
+    margin: 15px 0; /* مسافة أعلى وأسفل الحاوية */
+}
+
+button {
+    padding: 10px 20px; /* تنسيق الأزرار */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+}
+
+.carousel1 {
+    border: 2px solid var(--darkGreyColor); /* إضافة الإطار */
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: var(--softGreenColor);
+    position: relative;
+    height: 100%; /* ارتفاع الكاروسيل */
+    display: flex;
+    justify-content: center; /* لتوسيط العنصر */
+    align-items: center; /* لتوسيع العنصر عموديًا */
+    overflow: hidden; /* إخفاء الصور غير المعروضة */
+}
+
+.carousel1-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel1-item {
+    min-width: 33.33%; /* عرض كل عنصر */
+    text-align: center; /* لتوسيع النص في المنتصف */
+    transition: transform 0.5s ease;
+    margin-left: 3px;
+}
+
+.carousel1-item img {
+    width: 95%; /* عرض الصورة */
+    border-radius: 15px;
+    display: block; /* لجعل الصورة عنصر بلوك */
+    transition: transform 0.5s ease, border-radius 1s ease , box-shadow 2s ease; /* إضافة انتقال لـ border-radius */
+    box-shadow: 0 0px 20px  5px rgba(0, 0, 0, 0.5); /* إضافة الظل */
+
+}
+
+.carousel1-item.active img {
+    transform: scale(0.9); /* زيادة حجم الصورة النشطة */
+    box-shadow: 0 0px 20px  5px rgb(255, 214, 143); /* إضافة الظل */
+
+}
+
+.carousel1-item img.small {
+    transform: scale(0.7); /* حجم الصور الصغيرة */
+    border-radius: 50px;
+}
+
+.carousel1-item p {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-right: 0px;
+    color: var(--whiteHeader);
+    text-decoration: none;
+
+}
+
+.carousel1-item a {
+    text-decoration: none;
+}
+
 
 
 
 .carousel {
     border: 2px solid var(--darkGreyColor); /* إضافة الإطار */
-
     padding-top: 10px;
     border-radius: 10px;
     background-color: var(--softGreenColor);
@@ -1126,8 +1275,6 @@ button {
     overflow: hidden; /* إخفاء الصور غير المعروضة */
 }
 
-
-
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease;
@@ -1137,12 +1284,11 @@ button {
     min-width: 33.33%; /* عرض كل عنصر */
     text-align: center; /* لتوسيع النص في المنتصف */
     transition: transform 0.5s ease;
-    padding-left: 10px;
-
+    margin-left: 3px;
 }
 
 .carousel-item img {
-    width: 100%; /* عرض الصورة */
+    width: 95%; /* عرض الصورة */
     border-radius: 15px;
     display: block; /* لجعل الصورة عنصر بلوك */
     transition: transform 0.5s ease, border-radius 1s ease , box-shadow 2s ease; /* إضافة انتقال لـ border-radius */
@@ -1161,10 +1307,10 @@ button {
     border-radius: 50px;
 }
 
-
 .carousel-item p {
     font-size: 30px;
-    margin-top: 1px;
+    margin-top: 0px;
+    margin-right: 7px;
     color: var(--whiteHeader);
     text-decoration: none;
 
@@ -1175,6 +1321,32 @@ button {
 
 }
 
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 
 
@@ -1218,6 +1390,14 @@ button {
     }
 }
 
+
+
+
+
+
+
+
+
 @media screen and (max-width:1750px) {
     #overlayImage {
         position: fixed;
@@ -1247,8 +1427,8 @@ button {
     }
 
     .main-title {
-        font-size: 40px;
-        padding-right: 15px
+        font-size: 50px;
+        padding-right: 15px;
     }
 
     .main-arrow {
@@ -1836,26 +2016,44 @@ button {
 
     
 
+    .carousel1 {
+        padding-top: 10px;
+        border-radius: 10px;
+        background-color: var(--softGreenColor);
+        position: relative;
+        height: 100%; 
+        display: flex;
+
+    }
+
     .carousel {
         padding-top: 10px;
         border-radius: 10px;
         background-color: var(--softGreenColor);
         position: relative;
-        height: 100%; /* ارتفاع الكاروسيل */
+        height: 100%; 
         display: flex;
-        justify-content: center; /* لتوسيط العنصر */
-        align-items: center; /* لتوسيع العنصر عموديًا */
-        overflow: hidden; /* إخفاء الصور غير المعروضة */
     }
 
     
-    .carousel-item p {
+    .carousel1-item p {
         font-size: 12px;
         margin-top: 1px;
         color: var(--whiteHeader);
         text-decoration: none;
 
     }
+
+    .carousel-item p {
+        font-size: 12px;
+        margin-top: 1px;
+        color: var(--whiteHeader);
+        text-decoration: none;
+
+    } 
+
+
+    
     
     #overlayImage {
         position: fixed;
@@ -2271,8 +2469,12 @@ button {
     }
 
     .main-title {
-        font-size: 18px;
-        padding-right: 10px;
+        font-size: 28px;
+        padding: 0px;
+        margin: 0px;
+        margin-right: 20px;
+        text-align: center;
+        align-items: center;
         font-weight: bold;
     }
 
@@ -2606,7 +2808,7 @@ hr {
   
   .marquee-content img {
     display: inline-block;
-    margin-right: 2px;
+    margin-right: 0px;
     width: 90px;
   }
   

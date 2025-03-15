@@ -59,29 +59,6 @@
               </div>
 
 
-        <!-- <div class="marqueee">
-                <div class="marqueee-content">
-                    <img src="./Static/111.jpg" alt="Image 1">
-                    <img src="./Static/222.jpg" alt="Image 2">
-                    <img src="./Static/333.jpg" alt="Image 3">
-                    <img src="./Static/444.jpg" alt="Image 4">
-                    <img src="./Static/555.jpg" alt="Image 5">
-                    <img src="./Static/666.jpg" alt="Image 6">
-                    <img src="./Static/777.jpg" alt="Image 7">
-                    <img src="./Static/888.jpg" alt="Image 8">
-                    <img src="./Static/999.jpg" alt="Image 9">
-                    <img src="./Static/111.jpg" alt="Image 10">
-                    <img src="./Static/222.jpg" alt="Image 11">
-                    <img src="./Static/333.jpg" alt="Image 12">
-                    <img src="./Static/444.jpg" alt="Image 13">
-                    <img src="./Static/555.jpg" alt="Image 14">
-                    <img src="./Static/666.jpg" alt="Image 15">
-                    <img src="./Static/777.jpg" alt="Image 16">
-                    <img src="./Static/888.jpg" alt="Image 17">
-                    <img src="./Static/999.jpg" alt="Image 18">
-                </div>
-        </div> -->
-
         <marquee direction="right" class="marquee"> <p id="marquee" scrollamount="10s"> </p>
         </marquee>
 
@@ -90,7 +67,7 @@
         <div class="total-menus">
           
 
-            <div class="main-highlight">
+            <div class="main-highlight" id="lll">
                 <div style="position: relative;">
                     <video id="myVideo" width="100%" height="100%" autoplay muted loop>
                         <source src="./Static/video/0310.mp4" type="video/mp4">
@@ -101,135 +78,72 @@
                 </div>     
             </div>
 
+
             <div class="main-highlight">
 
-                <div class="main-header"  style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px; margin-left: 10px;">
-                    <!-- <div class="main-arrow">
-                        <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
-                        <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
-                    </div> -->
-                    <h2 class="main-title" > أختار من هنا اللي قلبك يحبه  </h2>
+                <div class="main-header"  style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px; margin-left: 10px;  font-weight: bold; font-size: 30px;">
+                    <p class="main-title" >  تحب اي دلوقتي؟ </p>
                 </div>
 
+                
+                <div class="button-container" >
+                    <a href="#lll" style="text-decoration: none;"><button onclick="showCarousel1('carousel1')" style="background-color: #FF7F50 ; color: aliceblue;  font-weight: bold; font-size: 30px;">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M21 2V22H19V15H15V8C15 4.68629 17.6863 2 21 2ZM19 4.53C18.17 5 17 6.17 17 8V13H19V4.53ZM9 13.9V22H7V13.9C4.71776 13.4367 3 11.419 3 9V3H5V10H7V3H9V10H11V3H13V9C13 11.419 11.2822 13.4367 9 13.9Z"></path></svg> تاكل  </button></a>
+                    <a href="#lll" style="text-decoration: none;"><button onclick="showCarousel('carousel')" style="background-color: #00BFFF ; color: aliceblue;  font-weight: bold; font-size: 30px;">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M11 19V13.8889L3 5V3H21V5L13 13.8889V19H18V21H6V19H11ZM7.49073 7H16.5093L18.3093 5H5.69072L7.49073 7ZM9.29072 9L12 12.0103L14.7093 9H9.29072Z"></path></svg> تشرب  </button></a>
+                </div>
 
+                <div class="carousel1" id="carousel1" style="display: none;">
+                    <div class="carousel1-images" >
+                        <div class="carousel1-item" >
+                            <a  href="./Front-end/Menus/Hot_drinks.html">
+                            <img src="./Static/images/ايكون القوائم/111.jpg"  alt="  999" class="active">
+                            <p>وجبات</p></a>
+                        </div>
+                        <div class="carousel1-item">
+                            <a href="./Front-end/Menus/Cocktails.html">
+                            <img src="./Static/images/ايكون القوائم/444.jpg" alt="وصف الصورة 4" class="small">
+                            <p>صواني</p></a>
+                        </div>
+                        <div class="carousel1-item">
+                            <a href="./Front-end/Menus/Soft_drinks.html">
+                            <img src="./Static/images/ايكون القوائم/222.jpg" alt="وصف الصورة 2" class="small">
+                            <p>طواجن</p></a>
+                        </div>
+                        <div class="carousel1-item">
+                            <a href="./Front-end/Menus/Smoothie_drinks.html" >
+                            <img src="./Static/images/ايكون القوائم/333.jpg" alt="وصف الصورة 3" class="small">
+                            <p> مقبلات</p></a>
+                        </div>
+                    </div>
+                </div> 
 
-                <div class="carousel" id="carousel">
+                <div class="carousel" id="carousel" style="display: none;" >
                     <div class="carousel-images">
                         <div class="carousel-item" >
                             <a  href="./Front-end/Menus/Hot_drinks.html">
-                            <img src="./../../Static/111.jpg"  alt="وصف الصورة 1" class="active">
-                            <p>المشروبات الساخنه</p></a>
+                            <img src="./Static/images/ايكون القوائم/1111.jpg"  alt="وصف الصورة 1" class="active">
+                            <p>  سخن  </p></a>
                         </div>
                         <div class="carousel-item">
                             <a href="./Front-end/Menus/Soft_drinks.html">
-                            <img src="./../../Static/222.jpg" alt="وصف الصورة 2" class="small">
-                            <p>مشروبات غازيه</p></a>
+                            <img src="./Static/images/ايكون القوائم/4444.jpg" alt="وصف الصورة 2" class="small">
+                            <p>  فريش  </p></a>
                         </div>
                         <div class="carousel-item">
                             <a href="./Front-end/Menus/Smoothie_drinks.html" >
-                            <img src="./../../Static/333.jpg" alt="وصف الصورة 3" class="small">
-                            <p>مشروبات سموزي</p></a>
+                            <img src="./Static/images/ايكون القوائم/3333.jpg" alt="وصف الصورة 3" class="small">
+                            <p>  حلو  </p></a>
                         </div>
                         <div class="carousel-item">
                             <a href="./Front-end/Menus/Cocktails.html">
-                            <img src="./../../Static/444.jpg" alt="وصف الصورة 4" class="small">
-                            <p>كوكتيلات</p></a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="./Front-end/Menus/freshing_cocktails.html">
-                            <img src="./../../Static/555.jpg" alt="وصف الصورة 5">
-                            <p> كوكتيلات فريش </p></a>
+                            <img src="./Static/images/ايكون القوائم/2222.jpg" alt="وصف الصورة 4" class="small">
+                            <p>  مشروبات متنوعة  </p></a>
                         </div>
                     </div>
-                </div>
+                </div> 
 
 
-
-
-
-
-                <!-- <div class="filter-wrapper">
-
-                <a href="./Front-end/Menus/Hot_drinks.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M8 1.5C8 0.947715 7.55228 0.5 7 0.5C6.44772 0.5 6 0.947715 6 1.5V2.5C6 2.50686 6.00042 2.51285 6.00081 2.51843C6.00385 2.56193 6.00516 2.58063 5.79289 2.79289L5.77277 2.81298C5.50599 3.07912 5 3.58391 5 4.5V5.5C5 6.05228 5.44772 6.5 6 6.5C6.55228 6.5 7 6.05228 7 5.5V4.5C7 4.49314 6.99958 4.48715 6.99919 4.48157C6.99615 4.43807 6.99484 4.41937 7.20711 4.20711L7.22723 4.18702C7.49401 3.92088 8 3.41609 8 2.5V1.5ZM2 9C2 8.44771 2.44772 8 3 8H21C21.5523 8 22 8.44772 22 9V10C22 14.1006 19.5318 17.6248 16 19.1679V20C16 20.5523 15.5523 21 15 21H9C8.44772 21 8 20.5523 8 20V19.1679C4.46819 17.6248 2 14.1006 2 10V9ZM18 0.5C18.5523 0.5 19 0.947715 19 1.5V2.5C19 3.41609 18.494 3.92088 18.2272 4.18702L18.2071 4.20711C17.9948 4.41937 17.9962 4.43807 17.9992 4.48157C17.9996 4.48715 18 4.49314 18 4.5V5.5C18 6.05228 17.5523 6.5 17 6.5C16.4477 6.5 16 6.05228 16 5.5V4.5C16 3.58391 16.506 3.07912 16.7728 2.81298L16.7929 2.79289C17.0052 2.58063 17.0038 2.56193 17.0008 2.51843C17.0004 2.51285 17 2.50686 17 2.5V1.5C17 0.947715 17.4477 0.5 18 0.5ZM13.5 1.5C13.5 0.947715 13.0523 0.5 12.5 0.5C11.9477 0.5 11.5 0.947715 11.5 1.5V2.5C11.5 2.50686 11.5004 2.51285 11.5008 2.51843C11.5038 2.56193 11.5052 2.58063 11.2929 2.79289L11.2728 2.81298C11.006 3.07912 10.5 3.58391 10.5 4.5V5.5C10.5 6.05228 10.9477 6.5 11.5 6.5C12.0523 6.5 12.5 6.05228 12.5 5.5V4.5C12.5 4.49314 12.4996 4.48715 12.4992 4.48157C12.4962 4.43807 12.4948 4.41937 12.7071 4.20711L12.7272 4.18702C12.994 3.92088 13.5 3.41609 13.5 2.5V1.5Z"></path></svg>
-                        </div>
-                        <p>ساخنة</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Soft_drinks.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M9 3C10.1046 3 11 3.89543 11 5C11 5.11469 10.9904 5.22639 10.9723 5.33454L12.9447 5.66546C12.9812 5.4484 13 5.22602 13 5C13 4.7625 12.9793 4.52984 12.9396 4.30371C13.2472 4.11088 13.6103 4 14 4C15.1046 4 16 4.89543 16 6C16 6.36443 15.903 6.70571 15.7327 7H5C4.44772 7 4 6.55228 4 6C4 5.44772 4.44772 5 5 5C5.20008 5 5.38362 5.05773 5.53851 5.15709C5.81193 5.33249 6.15353 5.36415 6.45453 5.24199C6.75554 5.11982 6.97845 4.85905 7.05229 4.5427C7.25876 3.65813 8.05374 3 9 3ZM10.5164 1.29745C10.0489 1.10575 9.53693 1 9 1C7.50087 1 6.19573 1.82409 5.51068 3.04344C5.34453 3.01488 5.17387 3 5 3C3.34315 3 2 4.34315 2 6C2 6.8885 2.38625 7.68679 3 8.23611V20C3 21.1046 3.89543 22 5 22H15C16.1046 22 17 21.1046 17 20H19C20.1046 20 21 19.1046 21 18V11C21 9.89543 20.1046 9 19 9H17V8.64575C17.6215 7.94132 18 7.01438 18 6C18 3.79086 16.2091 2 14 2C13.3143 2 12.6684 2.17301 12.1042 2.47716C11.6851 1.96201 11.1402 1.5532 10.5164 1.29745ZM17 18V11H19V18H17ZM7 11H9V18H7V11ZM11 11H13V18H11V11Z"></path></svg>                        </div>
-                        <p>غازية</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Smoothie_drinks.html" >
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M6.13317 2L5.01052 9.85858C4.70849 11.9728 5.53231 13.7891 6.89117 15.0465C7.99601 16.0688 9.45948 16.7319 11.0005 16.9343V20H6.00047V22H18.0005V20H13.0005V16.9343C14.5415 16.7319 16.0049 16.0688 17.1098 15.0465C18.4686 13.7891 19.2924 11.9728 18.9904 9.85858L17.8678 2H6.13317ZM10.0003 7C9.16936 7.00013 8.16238 7.24244 7.37122 7.47579L7.86776 4H16.1332L16.6234 7.4314C15.7848 7.70691 14.8897 8 14.0005 8C12.6083 8 11.4276 6.99978 10.0003 7Z"></path></svg>
-                        </div>
-                        <p>ســمــوزي</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Cocktails.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M7.32297 2H4V0H8.67703L10.677 5H21V7H18.8824L18.0554 21.0587C18.0243 21.5873 17.5866 22 17.0571 22H6.9429C6.41343 22 5.97572 21.5873 5.94463 21.0587L5.11765 7H3V5H8.52297L7.32297 2ZM7.1211 7L7.29906 10.0252C9.97062 10.1354 11.2679 10.6301 12.36 11.067C13.4113 11.4875 14.28 11.8532 16.5867 11.9676L16.8789 7H7.1211Z"></path></svg>                        </div>
-                        <p>الكوكتيلات</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/freshing_cocktails.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M14 2H6.20495C5.6091 2 5.09608 2.42057 4.97923 3.00485L4.1802 7H2V9H4.10875H19.8912H22V7H19.8198L19.0208 3.00485C18.9039 2.42057 18.3909 2 17.795 2H16V0H14V2ZM19.6605 11H4.33952L5.48105 20.8933C5.55383 21.524 6.08789 22 6.72281 22H17.2772C17.9121 22 18.4462 21.524 18.5189 20.8933L19.6605 11Z"></path></svg>                        
-                        </div>
-                        <p>كوكتيلات منعشة</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Milkshake.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M5 3H20C21.1046 3 22 3.89543 22 5V8C22 9.10457 21.1046 10 20 10H18V13C18 15.2091 16.2091 17 14 17H8C5.79086 17 4 15.2091 4 13V4C4 3.44772 4.44772 3 5 3ZM18 5V8H20V5H18ZM2 19H20V21H2V19Z"></path></svg>                        </div>
-                        <p>ميلك شيــك</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Frappé.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M15.5 2C17.433 2 19 3.567 19 5.5C19 5.72679 18.9784 5.94854 18.9372 6.16332L18.9223 6.22941C20.7106 6.82471 22 8.51178 22 10.5C22 12.3741 20.8544 13.9806 19.2253 14.6574L18.1393 21.1644C18.0589 21.6466 17.6417 22 17.1529 22H6.84713C6.35829 22 5.9411 21.6466 5.86073 21.1644L4.832 14.994C3.24892 14.9037 2 13.5977 2 12C2 10.6926 2.83627 9.5806 4.00306 9.16963L4 9C4 5.68629 6.68629 3 10 3C10.9216 3 11.7947 3.20779 12.575 3.57908C13.1988 2.62827 14.276 2 15.5 2ZM11 15H9V20H11V15ZM15 15H13V20H15V15ZM17.5 13C18.8807 13 20 11.8807 20 10.5C20 9.11929 18.8807 8 17.5 8C17.1643 8 16.8417 8.06519 16.5442 8.18959L16.3688 8.27129C15.4021 8.76932 14.2253 8.40165 13.7059 7.46716L13.6362 7.32984C12.9876 5.92108 11.5778 5 10 5C7.8578 5 6.10892 6.68397 6.0046 8.76748L5.99967 8.96394L6.00273 9.13357C6.0173 9.94127 5.54534 10.6726 4.8166 10.9967L4.6675 11.056C4.27121 11.1956 4 11.5722 4 12C4 12.5523 4.44772 13 5 13H17.5Z"></path></svg>                        </div>
-                        <p>فرابيـــــه</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Frappuccino.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M9 3C10.1046 3 11 3.89543 11 5C11 5.11469 10.9904 5.22639 10.9723 5.33454L12.9447 5.66546C12.9812 5.4484 13 5.22602 13 5C13 4.7625 12.9793 4.52984 12.9396 4.30371C13.2472 4.11088 13.6103 4 14 4C15.1046 4 16 4.89543 16 6C16 6.36443 15.903 6.70571 15.7327 7H5C4.44772 7 4 6.55228 4 6C4 5.44772 4.44772 5 5 5C5.20008 5 5.38362 5.05773 5.53851 5.15709C5.81193 5.33249 6.15353 5.36415 6.45453 5.24199C6.75554 5.11982 6.97845 4.85905 7.05229 4.5427C7.25876 3.65813 8.05374 3 9 3ZM10.5164 1.29745C10.0489 1.10575 9.53693 1 9 1C7.50087 1 6.19573 1.82409 5.51068 3.04344C5.34453 3.01488 5.17387 3 5 3C3.34315 3 2 4.34315 2 6C2 6.8885 2.38625 7.68679 3 8.23611V20C3 21.1046 3.89543 22 5 22H15C16.1046 22 17 21.1046 17 20H19C20.1046 20 21 19.1046 21 18V11C21 9.89543 20.1046 9 19 9H17V8.64575C17.6215 7.94132 18 7.01438 18 6C18 3.79086 16.2091 2 14 2C13.3143 2 12.6684 2.17301 12.1042 2.47716C11.6851 1.96201 11.1402 1.5532 10.5164 1.29745ZM17 11H19V18H17V11ZM15 9V10V19V20H5V9H15ZM7 11V18H9V11H7ZM13 11V18H11V11H13Z"></path></svg>
-                        </div>
-                        <p>الفربتشينو</p>
-                    </div>
-                </a>
-
-                <a href="./Front-end/Menus/Sweets.html">
-                    <div class="filter-card">
-                        <div class="filter-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M13 6.99993V10.9999L20 10.9999C20.5523 10.9999 21 11.4476 21 11.9999V19.9999L23 19.9999V21.9999H1V19.9999L3 19.9999V11.9999C3 11.4476 3.44772 10.9999 4 10.9999L11 10.9999V6.99993H13ZM13.8301 0.401855C14.6586 1.83673 14.1669 3.6715 12.7321 4.49993L11 5.49993C10.1716 4.06505 10.6632 2.23028 12.0981 1.40186L13.8301 0.401855Z"></path></svg>                        
-                        </div>
-                        <p>الحلويــات</p>
-                    </div>
-                </a>
-                </div> -->
             </div>
-            
-    
+
         </div>
     <!----------------------------->
         <div class="journey__grid">
@@ -380,7 +294,26 @@
 
 
         let currentIndex = 0; // بدأ من الصورة الأولى
+        const items1 = document.querySelectorAll('.carousel1-item');
         const items = document.querySelectorAll('.carousel-item');
+
+        function updateCarousel1() {
+            items1.forEach((item, index) => {
+                const img = item.querySelector('img');
+                item.classList.remove('active');
+                img.classList.remove('small');
+
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else if (index === (currentIndex + 1) % items1.length || index === (currentIndex + 2) % items1.length) {
+                    img.classList.add('small');
+                }
+            });
+
+            // تحريك الكاروسيل
+            const newTransform = -currentIndex * 33.33; // حساب التحرك
+            document.querySelector('.carousel1-images').style.transform = `translateX(${newTransform}%)`;
+        }
 
         function updateCarousel() {
             items.forEach((item, index) => {
@@ -404,6 +337,35 @@
         let startX;
         let moveX;
         let isMoving = false;
+
+        document.getElementById('carousel1').addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            isMoving = true;
+        });
+
+        document.getElementById('carousel1').addEventListener('touchmove', (event) => {
+            if (isMoving) {
+                moveX = event.touches[0].clientX;
+                const diffX = startX - moveX;
+
+                if (Math.abs(diffX) > 50) {
+                    isMoving = false;
+
+                    if (diffX > 0 && currentIndex < items1.length - 1) {
+                        currentIndex++; // تمرير لليسار
+                    } else if (diffX < 0 && currentIndex > 0) {
+                        currentIndex--; // تمرير لليمين
+                    }
+                    updateCarousel1();
+                }
+            }
+        });
+
+        document.getElementById('carousel1').addEventListener('touchend', () => {
+            isMoving = false; // إعادة تعيين
+        });
+
+
 
         document.getElementById('carousel').addEventListener('touchstart', (event) => {
             startX = event.touches[0].clientX;
@@ -432,7 +394,19 @@
             isMoving = false; // إعادة تعيين
         });
 
+
+
         // التحكم بالأسهم
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' && currentIndex < items1.length - 1) {
+                currentIndex++; // تمرير لليسار
+                updateCarousel1();
+            } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+                currentIndex--; // تمرير لليمين
+                updateCarousel1();
+            }
+        });
+
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight' && currentIndex < items.length - 1) {
                 currentIndex++; // تمرير لليسار
@@ -444,6 +418,7 @@
         });
 
         // تحديث الكاروسيل عند التحميل
+        updateCarousel1();
         updateCarousel();
 
 
@@ -454,15 +429,15 @@
 
         const marqueeContent = document.querySelector('.marquee-content');
         const images = [
-        './Static/111.jpg',
-        './Static/222.jpg',
-        './Static/333.jpg',
-        './Static/444.jpg',
-        './Static/555.jpg',
-        './Static/666.jpg',
-        './Static/777.jpg',
-        './Static/888.jpg',
-        './Static/999.jpg',
+        './Static/images/صور الشريط/111.jpg',
+        './Static/images/صور الشريط/222.jpg',
+        './Static/images/صور الشريط/333.jpg',
+        './Static/images/صور الشريط/444.jpg',
+        './Static/images/صور الشريط/555.jpg',
+        './Static/images/صور الشريط/666.jpg',
+        './Static/images/صور الشريط/777.jpg',
+        './Static/images/صور الشريط/888.jpg',
+        './Static/images/صور الشريط/999.jpg',
         ];
 
         // إنشاء نسخة متكررة من الصور
@@ -478,7 +453,51 @@
         const totalImages = marqueeContent.querySelectorAll('img').length;
         const animationDuration = totalImages * 10; // يمكنك تعديل 0.5 لتغيير السرعة
         marqueeContent.style.animationDuration = `${animationDuration}s`;
-    </script>
+
+
+
+
+
+
+
+        //////////////////////////////////
+
+        function showCarousel1(carousel1Id) {
+            const carouselToHide = document.querySelector('.carousel');
+            const carouselToHide1 = document.querySelector('.carousel1');
+
+            if (carouselToHide) {
+                carouselToHide.style.display = 'none'; // إخفاء الكاروسيل الآخر
+            }
+
+            const carouselToShow1 = document.getElementById(carousel1Id);
+            carouselToShow1.style.display = 'block'; // إظهار الكاروسيل الحالي
+        }
+
+        function showCarousel(carouselId) {
+            const carouselToHide1 = document.querySelector('.carousel1');
+            const carouselToHide = document.querySelector('.carousel');
+
+            if (carouselToHide1) {
+                carouselToHide1.style.display = 'none'; // إخفاء الكاروسيل الآخر
+            }
+
+            const carouselToShow = document.getElementById(carouselId);
+            carouselToShow.style.display = 'block'; // إظهار الكاروسيل الحالي
+        }
+        
+   
+   
+
+
+
+
+        
+
+ 
+   
+   
+   </script>
 
 </body>
 
