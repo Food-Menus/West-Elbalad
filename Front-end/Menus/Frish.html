@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./../../Static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+  <title>West Elbalad</title>
+
+  <style>
+    
+      .dropbtn {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 30px;
+        color: aliceblue;
+        background-color: #647953;
+        font-weight: bold;
+
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        transform: translateY(-20px); /* يبدأ العنصر مرتفعًا */
+        opacity: 0; /* يبدأ العنصر مخفيًا */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* تأثير الانتقال */
+        text-align: center; 
+        padding-bottom:10px ; 
+        background-color: rgba(0, 0, 0, 0.889); 
+        border-radius: 10px; 
+        padding-top: 10px; 
+        margin-bottom: 10px;
+        width: 87vw;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-align: center;
+        color: white; 
+        font-size: 15px;
+        transform: translateY(-10px); /* تبدأ العناصر مرتفعة */
+        opacity: 0; /* تبدأ العناصر مخفية */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* تأثير الانتقال */
+        font-weight: bold;
+
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        transform: translateY(0); /* يعود العنصر لمكانه */
+        opacity: 1; /* يظهر العنصر */
+      }
+
+      /* إضافة تأخير تدريجي لكل عنصر */
+      .dropdown:hover .dropdown-content a:nth-child(1) { transition-delay: 0.1s; transform: translateY(0); opacity: 1; }
+      .dropdown:hover .dropdown-content a:nth-child(2) { transition-delay: 0.2s; transform: translateY(0); opacity: 1; }
+      /* يمكنك إضافة المزيد من التأخيرات لبقية العناصر */
+
+      
+  </style>
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+      <h1 class="logo">West Elbalad</h1>
+      <div class="sidebar-menus">
+        <br>
+        <br>
+        <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> الصفحة الرئيسية </a>
+        <a href="https://www.facebook.com/westelbaladofficial"><ion-icon name="logo-facebook"></ion-icon>صفحتنا ع الفيس</a>
+        <a href="https://wa.me/+201024388812?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon> كلمنا فأي وقت</a>
+        <a href="./../Pages/order.html"><ion-icon name="checkbox-outline"></ion-icon> كمل طلب </a>
+        <a href="./../Pages/about.html"><ion-icon name="people-circle-outline"></ion-icon>إحنا مين؟</a>
+      </div>
+      <div class="menu-off">
+        <a href="#" class="menu-off"><ion-icon name="close-outline"></ion-icon>close</a>
+      </div>
+    </div>
+<!------------------------------------------------------------>   
+
+    <div class="main">
+
+      <div class="main-navbar">
+        <div class="profile">   <div class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M5 5H13V19H5V5ZM19 19H15V5H19V19ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3H4ZM7 12L11 8.5V15.5L7 12Z"></path></svg></div></div>
+        <div class="img"><img src="./../../Static/images/اساسيات/logo.png"></div>
+        <div class="profile"> <a href="./../../index.html" class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z"></path></svg></a></div>
+      </div>
+  
+<!------------------------------------------------------------>
+
+    <section class="section__container order__container" id="menu">
+
+        <div class="dropdown">
+          <button class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M20 4V16H23L19 21L15 16H18V4H20ZM12 18V20H3V18H12ZM14 11V13H3V11H14ZM14 4V6H3V4H14Z"></path></svg> قائمة المشروبات </button>
+          <div class="dropdown-content">
+            <a href="#1111">  قائمة الكتوكتيل  </a>  <a href="#2222">  العصاير الفريش </a>  
+          </div>
+        </div><br><br>
+
+      <p id="1111" style="font-size: 25px; text-align: center; background-color: #00BFFF;font-weight: bold; border-radius: 15px; color: white; padding: 15px;  padding-bottom:15px;">    قائمة  الكوكتيل   </p>  
+      <div id="drinks-list1111" class="destination__grid"></div>  <br>  
+
+      <p id="2222" style="font-size: 25px; text-align: center;  background-color: #00BFFF;font-weight: bold; border-radius: 15px; color: white; padding: 15px;  padding-bottom:15px;">    قائمة المشروبات الفريش   </p>      
+      <div id="drinks-list2" class="destination__grid"></div>  <br>    
+
+    </section> 
+
+    </div>
+
+<!------------------------------------------------------------>
+
+    <a href="./../Pages/order.html">
+      <div class="counter">
+      <span id="item-count">عدد العناصر المحددة: 0</span>
+      <ion-icon name="cart-outline" class="icon-1"></ion-icon>
+      </div>
+    </a>
+
+<!------------------------------------------------------------>
+
+    <script>
+      const sheetID1111 = '1jltTEsuocorKWTApca31NHtG8MwJQ1CrkgSud229u4s'; // الكوكتيل
+      const base1111 = `https://docs.google.com/spreadsheets/d/${sheetID1111}/gviz/tq?tqx=out:json`;
+
+      async function fetchDrinks1111() {
+        const response = await fetch(base1111);
+        const data = await response.text();
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        const drinksList = document.getElementById('drinks-list1111');
+        drinksList.innerHTML = '';
+
+        json.table.rows.forEach(row => {
+          const drinkType = row.c[0] ? row.c[0].v : 'غير متوفر'; // نوع المشروب
+          const drinkPrice = row.c[1] ? row.c[1].v : 'غير متوفر'; // سعر المشروب
+          const drinkImage = row.c[2] ? row.c[2].v : ''; // رابط الصورة
+
+          drinksList.innerHTML += `
+            <div class="destination__card" onclick="addToCart('${drinkType}', '${drinkPrice}')">
+              <img src="${drinkImage}" alt="${drinkType}" />
+              <div class="destination__details">
+                <div class="menu-item">
+                  <h4>${drinkType}</h4>
+                  <p>${drinkPrice}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      function addToCart(drinkType, drinkPrice) {
+        // الحصول على العناصر الموجودة في الكارت
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // إضافة المشروب إلى الكارت
+        cartItems.push({ type: drinkType, price: drinkPrice });
+        
+        // تخزين الكارت في localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // تحديث عدد العناصر في الكارت
+        document.getElementById('item-count').innerText = `عدد العناصر المحددة: ${cartItems.length}`;
+      }
+
+      fetchDrinks1111(); // استدعاء الدالة لتحميل البيانات
+
+      const menuItems = document.querySelectorAll(".menu-item");
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const counter = document.querySelector(".counter span");
+      const counterElement = document.querySelector(".counter");
+      const clearCartButton = document.getElementById("clearCart");
+
+      function updateCounter() {
+        counter.textContent = `عدد العناصر المحددة : ${cartItems.length}`;
+        counterElement.style.display = cartItems.length > 0 ? "block" : "none";
+      }
+
+      function addToCart(itemName, itemprice) {
+        cartItems.push({ name: itemName, price: itemprice });
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        updateCounter();
+        swal(`${itemName} تمت إضافته إلى السلة`);
+      }
+
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const itemName = item.querySelector("h4").textContent;
+          const itemprice = item.querySelector("p").textContent;
+          addToCart(itemName, itemprice);
+        });
+      });
+      
+      updateCounter();
+
+      function updateDataAttributes() {
+        menuItems.forEach((item) => {
+          const h4Elements = item.querySelectorAll("h4");
+          item.dataset.name = h4Elements[0].textContent;
+          item.dataset.price = h4Elements[1].textContent;
+        });
+      }
+
+      updateDataAttributes();
+
+    </script>
+     
+    <script>
+      
+      const sheetID2 = '1EtCaZJnV4qEQsR2-8XstI7UrQz_EE945jyzVrRpASh8'; // الفريش 
+      const base2 = `https://docs.google.com/spreadsheets/d/${sheetID2}/gviz/tq?tqx=out:json`;
+
+      async function fetchDrinks2() {
+        const response = await fetch(base2);
+        const data = await response.text();
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        const drinksList = document.getElementById('drinks-list2');
+        drinksList.innerHTML = '';
+
+        json.table.rows.forEach(row => {
+          const drinkType = row.c[0] ? row.c[0].v : 'غير متوفر'; // نوع المشروب
+          const drinkPrice = row.c[1] ? row.c[1].v : 'غير متوفر'; // سعر المشروب
+          const drinkImage = row.c[2] ? row.c[2].v : ''; // رابط الصورة
+
+          drinksList.innerHTML += `
+            <div class="destination__card" onclick="addToCart('${drinkType}', '${drinkPrice}')">
+              <img src="${drinkImage}" alt="${drinkType}" />
+              <div class="destination__details">
+                <div class="menu-item">
+                  <h4>${drinkType}</h4>
+                  <p>${drinkPrice}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      }
+      fetchDrinks2(); // استدعاء الدالة لتحميل البيانات
+
+    </script>
+
+<!------------------------------------------------------------>
+
+    <script>
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
+        dropdown.addEventListener('mouseenter', () => {
+          dropdownContent.style.display = 'block';
+          setTimeout(() => {
+            dropdownContent.style.transform = 'translateY(0)';
+            dropdownContent.style.opacity = 1;
+            dropdownLinks.forEach((link, index) => {
+              setTimeout(() => {
+                link.style.transform = 'translateY(0)';
+                link.style.opacity = 1;
+              }, 100 * (index + 1)); // تأخير ديناميكي
+            });
+          }, 10);
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+          dropdownContent.style.transform = 'translateY(-20px)';
+          dropdownContent.style.opacity = 0;
+          dropdownLinks.forEach(link => {
+            link.style.transform = 'translateY(-10px)';
+            link.style.opacity = 0;
+          });
+          setTimeout(() => {
+            dropdownContent.style.display = 'none';
+          }, 300);
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script> 
+    <script src="./../../Back-end/app.js"></script>
+</body>
+
+</html>

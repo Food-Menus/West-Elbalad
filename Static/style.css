@@ -5,7 +5,12 @@
     /* main-highlight */
     /* carousel */
     /* main-title */
-
+    /* card-content */
+    /* destination__details */
+    /* .sidebar.active */
+    /* profile */
+    /* menu-toggle user img*/
+    /* destination__grid */
 html {
     scroll-behavior: smooth; /* يجعل التمرير سلسًا */
 }
@@ -83,6 +88,21 @@ body {
     border-radius: 50px
 }
 
+
+.sidebar.active {
+    display: flex;
+    z-index: 10;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
 .main {
     width: 100%;
     height: max-content;
@@ -105,7 +125,7 @@ body {
 
     background-color: rgba(0, 0, 0, 0.5); /* خلفية سوداء نصف شفافة */
 
-    background-image: url("./images/اساسيات/ramadan-islamic-pattern-design-ramadan-islamic-pattern-design-can-be-used-many-companies-making-cushins-tablo-181498455.webp"); /* استبدل your-pattern-image.png بمسار صورتك */
+    background-image: url("./images/اساسيات/backgraund.png"); /* استبدل your-pattern-image.png بمسار صورتك */
     background-repeat: repeat;
     animation: moveBackground 70s linear infinite; /* تشغيل الحركة */
 
@@ -148,6 +168,7 @@ body {
     display: flex;
     align-items: center;
     gap: .5rem;
+    padding: 10px;
     
 }
 
@@ -159,7 +180,7 @@ body {
     font-size: 100px;
     color: var(--whiteHeader);
     text-decoration: none;
-    padding: 10 10px;
+    padding: 10px 10px;
     border-radius: 50%
 }
 
@@ -571,7 +592,6 @@ img {
 }
 
 .destination__grid {
-    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -831,14 +851,11 @@ img {
     font-size: 100px;
     color: var(--whiteHeader);
     text-decoration: none;
-    padding: 10 10px;
+    padding: 10px 10px;
     border-radius: 50%
 }
 
-.sidebar.active {
-    display: flex;
-    z-index: 10
-}
+
 
 .footer__content {
     margin-top: 1rem;
@@ -1440,7 +1457,7 @@ button {
 
 @media screen and (max-width:1500px) {
     .destination__grid {
-        margin-top: 4rem;
+        margin-top: 10px;
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -1623,7 +1640,7 @@ button {
     }
 
     .destination__grid {
-        margin-top: 4rem;
+        margin-top: 0rem;
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -1869,7 +1886,8 @@ button {
         margin-bottom: 9px;
         padding: 7px;
         background-color: var(--seconderyColor);
-        border-radius: 10px
+        border-radius: 10px;
+        
     }
 
     .main-highlight {
@@ -1880,7 +1898,7 @@ button {
         margin-bottom: 9px;
         padding: 10px;
         background-color: var(--seconderyColor);
-        border-radius: 10px
+        border-radius: 10px ;
     }
 
     .back,
@@ -2083,7 +2101,7 @@ button {
     }
 
     .destination__grid {
-        margin-top: 4rem;
+        margin-top: 0rem;
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -2164,7 +2182,7 @@ button {
     }
 
     .destination__grid {
-        margin-top: 4rem;
+        margin-top: 0rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -2324,7 +2342,7 @@ button {
     }
 
     .destination__grid {
-        margin-top: 4rem;
+        margin-top: 15px;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -2660,6 +2678,7 @@ button {
 .card-content {
     margin-bottom: 10px;
     text-align: right;
+    color: var(--marquee);
     /* محاذاة المحتوى لليمين */
 }
 

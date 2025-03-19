@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./../../Static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="icon" href="./../../Static/images/اساسيات/logoooo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+  <title>West Elbalad</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+      <h1 class="logo">West Elbalad</h1>
+      <div class="sidebar-menus">
+        <br>
+        <br>
+        <a href="./../../index.html"><ion-icon name="home-outline"></ion-icon> الصفحة الرئيسية </a>
+        <a href="https://www.facebook.com/westelbaladofficial"><ion-icon name="logo-facebook"></ion-icon>صفحتنا ع الفيس</a>
+        <a href="https://wa.me/+201024388812?text=مرحبا اريد التواصل معكم"><ion-icon name="logo-whatsapp"></ion-icon> كلمنا فأي وقت</a>
+        <a href="./../Pages/order.html"><ion-icon name="checkbox-outline"></ion-icon> كمل طلب </a>
+        <a href="./../Pages/about.html"><ion-icon name="people-circle-outline"></ion-icon>إحنا مين؟</a>
+      </div>
+      <div class="menu-off">
+        <a href="#" class="menu-off"><ion-icon name="close-outline"></ion-icon>close</a>
+      </div>
+    </div>
+<!------------------------------------------------------------>   
+
+    <div class="main">
+
+        <div class="main-navbar">
+          <div class="profile">   <div class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M5 5H13V19H5V5ZM19 19H15V5H19V19ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3H4ZM7 12L11 8.5V15.5L7 12Z"></path></svg></div></div>
+          <div class="img"><img src="./../../Static/images/اساسيات/logo.png"></div>
+          <div class="profile"> <a href="./../../index.html" class="user"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z"></path></svg></a></div>
+        </div>
+  
+<!------------------------------------------------------------>
+
+    <section class="section__container order__container" id="menu">
+      <h2 class="section__header" style="text-align: center; padding-bottom:15px ; background-color: rgba(0, 0, 0, 0.716); border-radius: 15px; color: white; padding-top: 15px;  "> المشروبات الساخنه </h2><br>
+      <p class="section__description" style="text-align: center; background-color: rgba(0, 0, 0, 0.716); border-radius: 15px; color: white; padding: 15px;  padding-bottom:15px;">  أختـار اللـي تـحبـه 😉 </p>      
+      <div id="drinks-list" class="destination__grid"></div>
+    </section> 
+
+    </div>
+
+<!------------------------------------------------------------>
+
+    <a href="./../Pages/order.html">
+      <div class="counter">
+      <span id="item-count">عدد العناصر المحددة: 0</span>
+      <ion-icon name="cart-outline" class="icon-1"></ion-icon>
+      </div>
+    </a>
+
+<!------------------------------------------------------------>
+
+    <script>
+
+      const sheetID = '1pj1MNrB2LsHFG5GjiOlzK8u-yA3PdKC2YUGBxmE6qJY'; // معرف جدول جوجل
+      const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
+
+      async function fetchDrinks() {
+        const response = await fetch(base);
+        const data = await response.text();
+        const json = JSON.parse(data.substring(47).slice(0, -2));
+        const drinksList = document.getElementById('drinks-list');
+        drinksList.innerHTML = '';
+
+        json.table.rows.forEach(row => {
+          const drinkType = row.c[0] ? row.c[0].v : 'غير متوفر'; // نوع المشروب
+          const drinkPrice = row.c[1] ? row.c[1].v : 'غير متوفر'; // سعر المشروب
+          const drinkImage = row.c[2] ? row.c[2].v : ''; // رابط الصورة
+
+          drinksList.innerHTML += `
+            <div class="destination__card" onclick="addToCart('${drinkType}', '${drinkPrice}')">
+              <img src="${drinkImage}" alt="${drinkType}" />
+              <div class="destination__details">
+                <div class="menu-item">
+                  <h4>${drinkType}</h4>
+                  <p>${drinkPrice}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      function addToCart(drinkType, drinkPrice) {
+        // الحصول على العناصر الموجودة في الكارت
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // إضافة المشروب إلى الكارت
+        cartItems.push({ type: drinkType, price: drinkPrice });
+        
+        // تخزين الكارت في localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // تحديث عدد العناصر في الكارت
+        document.getElementById('item-count').innerText = `عدد العناصر المحددة: ${cartItems.length}`;
+      }
+
+      fetchDrinks(); // استدعاء الدالة لتحميل البيانات
+
+      const menuItems = document.querySelectorAll(".menu-item");
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const counter = document.querySelector(".counter span");
+      const counterElement = document.querySelector(".counter");
+      const clearCartButton = document.getElementById("clearCart");
+
+      function updateCounter() {
+        counter.textContent = `عدد العناصر المحددة : ${cartItems.length}`;
+        counterElement.style.display = cartItems.length > 0 ? "block" : "none";
+      }
+
+      function addToCart(itemName, itemprice) {
+        cartItems.push({ name: itemName, price: itemprice });
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        updateCounter();
+        swal(`${itemName} تمت إضافته إلى السلة`);
+      }
+
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const itemName = item.querySelector("h4").textContent;
+          const itemprice = item.querySelector("p").textContent;
+          addToCart(itemName, itemprice);
+        });
+      });
+      
+      updateCounter();
+
+      function updateDataAttributes() {
+        menuItems.forEach((item) => {
+          const h4Elements = item.querySelectorAll("h4");
+          item.dataset.name = h4Elements[0].textContent;
+          item.dataset.price = h4Elements[1].textContent;
+        });
+      }
+
+      updateDataAttributes();
+
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./../../Back-end/JavaScript.js"></script>
+    <script src="./../../Back-end/script.js"></script> 
+    <script src="./../../Back-end/app.js"></script>
+</body>
+
+</html>
