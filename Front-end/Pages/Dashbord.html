@@ -42,11 +42,12 @@
     <button id="scrollToBottomBtn" class="WhatsApp"> احدث الطلبات </button><br>
     <div id="data-container"></div>
     <button id="scrollToBottomBtn1" class="WhatsApp"> اعادة تحمل الصفحة </button><br>
+    <button id="Table1" class="telegram"> جدول بيانات أراء العملاء </button><br>
 
     <br>
     <script>
-
-        const sheetID = '1xZlt16iJgI1d_XIktPz6FjrOOjXdDG9i96ALLWO2iIs';
+        
+        const sheetID = '1kogQPoNMjUuOG7_p13DTHxjFw-qWJ5bS1QABbIGgIk4';
         const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
     
         fetch(base)
@@ -165,6 +166,11 @@
         });
         const scrollToBottomBtn1 = document.getElementById('scrollToBottomBtn1');
         scrollToBottomBtn1.addEventListener('click', () => { location.reload(); });
+
+        const Table1 = document.getElementById('Table1');
+        Table1.addEventListener('click', () => {  window.location.href = 'https://docs.google.com/spreadsheets/d/1kogQPoNMjUuOG7_p13DTHxjFw-qWJ5bS1QABbIGgIk4/edit?gid=0#gid=0';  });
+         
+
     </script>
 
     <!------------------------------------------------------------>
