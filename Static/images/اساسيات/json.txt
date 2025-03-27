@@ -1,0 +1,2 @@
+/*O_o*/
+google.visualization.Query.setResponse({"version":"0.6","reqId":"0","status":"ok","sig":"1415827196","table":{"cols":[{"id":"A","label":"username","type":"string"},{"id":"B","label":"password","type":"number","pattern":"General"}],"rows":[{"c":[{"v":"قيصر"},{"v":123456.0,"f":"123456"}]},{"c":[{"v":"ابتسام"},{"v":12345.0,"f":"12345"}]},{"c":[{"v":"نسمه"},{"v":1234.0,"f":"1234"}]},{"c":[{"v":"مختار"},{"v":123.0,"f":"123"}]}],"parsedNumHeaders":1}});

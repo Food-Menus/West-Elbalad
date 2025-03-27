@@ -7,11 +7,11 @@
     /* main-title */
     /* card-content */
     /* destination__details */
-    /* .sidebar.active */
-    /* profile */
+    /* .sidebar.active  */
+    /* profile menu-item*/
     /* menu-toggle user img*/
     /* destination__grid */
-    /* telegram */
+    /* journey__card */
 html {
     scroll-behavior: smooth; /* يجعل التمرير سلسًا */
 }
@@ -1012,7 +1012,6 @@ button {
 }
 
 .menu-item {
-    padding: 5px;
     cursor: pointer;
     background-color: var(--greyColor)
 }
@@ -1142,7 +1141,7 @@ button {
 }
 
 .journey__card__content h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
@@ -1154,7 +1153,7 @@ button {
     margin-bottom: .5rem;
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--softGreenColor)
+    color: var(--white);
 }
 
 .event__content {
@@ -2205,11 +2204,11 @@ button {
     }
 
     .destination__details {
-        padding: 1rem .3rem
+        padding:  10px 10px;
     }
 
     .destination__details div {
-        margin-bottom: 1rem;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -2365,32 +2364,41 @@ button {
     }
 
     .destination__details {
-        padding: 1rem .3rem
+        padding: 5px 5px;
     }
 
     .destination__details div {
-        margin-bottom: 1rem;
+        margin-bottom: 5px;
+        margin-top: 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem
+        gap: 1rem;
+        padding: 5px 5px;
+
     }
 
     .destination__details h4 {
         font-size: 1.1rem;
         font-weight: 500;
-        color: var(--text-light)
+        color: var(--text-light);
+        padding: 5px 5px;
+
     }
 
     .destination__details h2 {
         font-size: 1.5rem;
         font-weight: 500;
-        color: var(--text-light)
+        color: var(--text-light);
+        padding: 5px 5px;
+
     }
 
     .destination__details {
         font-size: 1.1rem;
-        color: var(--text-light)
+        color: var(--text-light);
+        padding: 5px 5px;
+
     }
 
     .about-img {
