@@ -12,6 +12,7 @@
     /* menu-toggle user img*/
     /* destination__grid */
     /* journey__card */
+    /* img */
 html {
     scroll-behavior: smooth; /* يجعل التمرير سلسًا */
 }
@@ -148,14 +149,14 @@ body {
     justify-content: space-between;
     align-items: center
 }
-
 .img {
     width: 450px;
     display: flex;
     padding: 25px;
     justify-content: space-around;
-    background-color: var(--whiteColor);
-    border-radius: 50px
+    background-color: var(--primaryColor);
+    border-radius: 50px;
+    border: 2px solid var(--whiteColor);
 }
 
 .img img {
@@ -2020,7 +2021,6 @@ button {
         padding: 15px;
         display: flex;
         justify-content: space-around;
-        background-color: var(--whiteColor);
         border-radius: 50px;
     }
 
@@ -2132,7 +2132,6 @@ button {
         display: flex;
         padding: 10px;
         justify-content: space-around;
-        background-color: var(--whiteColor);
         border-radius: 50px;
       
     }
@@ -2591,7 +2590,6 @@ button {
         display: flex;
         padding: 10px;
         justify-content: space-around;
-        background-color: var(--whiteColor);
         border-radius: 50px;
     }
 
